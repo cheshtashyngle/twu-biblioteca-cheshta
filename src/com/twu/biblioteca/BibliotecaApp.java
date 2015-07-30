@@ -16,5 +16,12 @@ public class BibliotecaApp {
         String output = formatter.format();
         view.print(output);
         String input = view.input();
+        ArrayList<String[]> books = new ArrayList<String[]>();
+        String[] book = {"Head First With Java", "Serran", "1990"};
+        books.add(book);
+        Library library = new Library(books);
+        Parser parser = new Parser(input, library, view);
+        ListBooks listBooks = parser.parseCommand();
+        listBooks.execute();
     }
 }

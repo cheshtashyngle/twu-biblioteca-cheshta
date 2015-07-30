@@ -7,18 +7,18 @@
     </path>
 
     <target name="compile">
-        <javac srcdir="src" includeantruntime="false" destdir="out" classpath="lib/junit-4.11.jar" />
-        <javac srcdir="test" includeantruntime="false" destdir="out" classpath="lib/junit-4.11.jar" />
+        <javac srcdir="src" includeantruntime="false" destdir="out" classpathref="classpath" />
+        <javac srcdir="test" includeantruntime="false" destdir="out" classpathref="classpath" />
     </target>
 
     <target name="runjunit" depends="compile" >
         <junit haltonfailure="true" printsummary="true" showoutput="yes" >
             <test name = "com.twu.biblioteca.ExampleTest" />
             <test name = "com.twu.biblioteca.ViewTest" />
-            <test name = "com.twu.biblioteca.ListOfBooksFormatterTest" />
             <test name = "com.twu.biblioteca.MenuFormatterTest" />
             <test name = "com.twu.biblioteca.ParserTest" />
             <test name = "com.twu.biblioteca.LibraryTest" />
+            <test name = "com.twu.biblioteca.ListBooksTest" />
             <classpath>
                 <pathelement location="out" />
                 <path refid="classpath" />
