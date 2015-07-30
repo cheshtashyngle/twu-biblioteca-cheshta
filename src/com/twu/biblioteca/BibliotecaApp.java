@@ -18,5 +18,6 @@ public class BibliotecaApp {
         formatter = new MenuFormatter(menu);
         String output = formatter.format();
         view.print(output);
+        String input = view.input();
     }
 }

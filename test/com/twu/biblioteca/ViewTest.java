@@ -3,20 +3,28 @@ package com.twu.biblioteca;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
 import java.io.PrintStream;
+import java.util.Scanner;
 
 import static org.junit.Assert.assertEquals;
 
 
 public class ViewTest {
     private ByteArrayOutputStream os = new ByteArrayOutputStream();
-    PrintStream printStream;
+    private ByteArrayInputStream is = new ByteArrayInputStream("My".getBytes());
+    PrintStream printStreamOut;
+    InputStream printStreamIn;
 
     @Before
     public void setUpStream() {
-        printStream = System.out;
+        printStreamOut = System.out;
+        printStreamIn = System.in;
         System.setOut(new PrintStream(os));
+        System.setIn(is);
     }
 
     @Test
@@ -28,9 +36,17 @@ public class ViewTest {
         assertEquals("Welcome to Biblioteca Library Management System\n", os.toString());
     }
 
+    @Test
+    public void shouldReturnTheCorrectInput() {
+        View view = new View();
+
+        assertEquals("My", view.input());
+    }
+
     @After
     public void cleanUpStream() {
-        System.setOut(printStream);
+        System.setOut(printStreamOut);
+        System.setIn(printStreamIn);
     }
 }
 
