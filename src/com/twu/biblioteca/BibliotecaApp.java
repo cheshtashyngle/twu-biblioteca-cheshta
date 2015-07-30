@@ -10,9 +10,6 @@ public class BibliotecaApp {
         View view = new View();
         Formatter formatter;
         view.print(welcomeMessage);
-        ArrayList<String[]> books = new ArrayList<String[]>();
-        String[] book1 = {"Head First With Java", "Serran", "1990"};
-        books.add(book1);
         ArrayList<String> menu = new ArrayList<String>();
         menu.add("ListBooks");
         formatter = new MenuFormatter(menu);
