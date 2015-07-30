@@ -49,4 +49,3 @@ public class ViewTest {
         System.setIn(printStreamIn);
     }
 }
-

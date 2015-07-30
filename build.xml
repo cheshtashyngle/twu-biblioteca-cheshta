@@ -17,6 +17,7 @@
             <test name = "com.twu.biblioteca.ViewTest" />
             <test name = "com.twu.biblioteca.ListOfBooksFormatterTest" />
             <test name = "com.twu.biblioteca.MenuFormatterTest" />
+            <test name = "com.twu.biblioteca.ParserTest" />
             <classpath>
                 <pathelement location="out" />
                 <path refid="classpath" />
