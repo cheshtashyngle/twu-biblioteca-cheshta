@@ -12,8 +12,9 @@ public class ListOfBooksFormatterTest {
     public void shouldReturnTheListOfBooks() {
         ArrayList books = new ArrayList();
         books.add("Head First With Java");
+        books.add("C Sharp");
         Formatter listOfBooksFormatter = new ListOfBooksFormatter(books);
 
-        assertEquals("Head First With Java\n", listOfBooksFormatter.format());
+        assertEquals("Head First With Java\nC Sharp", listOfBooksFormatter.format());
     }
 }

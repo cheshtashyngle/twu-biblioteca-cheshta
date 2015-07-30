@@ -12,9 +12,11 @@ public class ListOfBooksFormatter implements Formatter {
     @Override
     public String format() {
         String output = "";
-        for(int i = 0;i < books.size();i ++) {
+        int i;
+        for(i = 0;i < (books.size() - 1);i++) {
             output = output + books.get(i) + "\n";
         }
+        output += books.get(i);
         return output;
     }
 }
