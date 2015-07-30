@@ -1,6 +1,5 @@
 package com.twu.biblioteca;
 
-
 import org.junit.Test;
 import java.util.ArrayList;
 
@@ -10,11 +9,11 @@ public class ListOfBooksFormatterTest {
 
     @Test
     public void shouldReturnTheListOfBooks() {
-        ArrayList books = new ArrayList();
-        books.add("Head First With Java");
-        books.add("C Sharp");
+        ArrayList<String[]> books = new ArrayList();
+        String[] book = {"Head First With Java", "Serran", "1990"};
+        books.add(book);
         Formatter listOfBooksFormatter = new ListOfBooksFormatter(books);
 
-        assertEquals("Head First With Java\nC Sharp", listOfBooksFormatter.format());
+        assertEquals("Head First With Java\t|Serran\t|1990\t|\n", listOfBooksFormatter.format());
     }
 }

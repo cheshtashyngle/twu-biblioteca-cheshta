@@ -2,8 +2,9 @@ package com.twu.biblioteca;
 
 import java.util.ArrayList;
 
+
 public class ListOfBooksFormatter implements Formatter {
-    private ArrayList books;
+    private ArrayList<String[]> books;
 
     public ListOfBooksFormatter(ArrayList books) {
         this.books = books;
@@ -11,12 +12,14 @@ public class ListOfBooksFormatter implements Formatter {
 
     @Override
     public String format() {
-        String output = "";
-        int i;
-        for(i = 0;i < (books.size() - 1);i++) {
-            output = output + books.get(i) + "\n";
+        String booksDetails = "";
+        for(int bookNo = 0; bookNo < books.size();bookNo++) {
+            String bookDetail = "";
+            for(int bookAttribute = 0; bookAttribute < 3;bookAttribute++) {
+                bookDetail = bookDetail + books.get(bookNo)[bookAttribute] + "\t|";
+            }
+            booksDetails = booksDetails + bookDetail + "\n";
         }
-        output += books.get(i);
-        return output;
+        return booksDetails;
     }
 }
