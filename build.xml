@@ -21,6 +21,7 @@
             <test name = "com.twu.biblioteca.InvalidOptionTest" />
             <test name = "com.twu.biblioteca.BookTest" />
             <test name = "com.twu.biblioteca.CheckoutTest" />
+            <test name = "com.twu.biblioteca.CheckinTest" />
             <classpath>
                 <pathelement location="out" />
                 <path refid="classpath" />

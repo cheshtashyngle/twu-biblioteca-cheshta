@@ -13,6 +13,6 @@ public class Checkin implements Command {
 
     @Override
     public void execute() {
-
+        library.checkin(bookName);
     }
 }
