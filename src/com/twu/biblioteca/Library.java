@@ -32,13 +32,16 @@ public class Library {
         return books != null ? books.hashCode() : 0;
     }
 
-    public void checkin(String bookName) {
+    public boolean checkin(String bookName) {
+        boolean flag = false;
         for(Book book : issuedBooks) {
             if(book.equals(bookName)) {
                 books.add(book);
                 issuedBooks.remove(book);
+                flag = true;
                 break;
             }
         }
+        return flag;
     }
 }

@@ -18,6 +18,10 @@ public class InvalidOptionTest {
         InvalidOption invalidOption = new InvalidOption(view, parser);
         ArrayList<String> menu = new ArrayList<String>();
         menu.add("ListBooks");
+        menu.add("Checkout");
+        menu.add("Checkin");
+        menu.add("Quit");
+
         String menuString = "Menu\n";
         for(int menuElement =0;menuElement < menu.size();menuElement++) {
             menuString = menuString + (menuElement+1) + "." + menu.get(menuElement) + "\n";
@@ -27,7 +31,7 @@ public class InvalidOptionTest {
         when(parser.parseCommand("ListBooks")).thenReturn(command);
         invalidOption.execute();
 
-        verify(view).print("Select a valid option!");
+        verify(view).print("Select a valid option!\n");
         verify(view).print(menuString);
         verify(view).input();
         verify(parser).parseCommand("ListBooks");

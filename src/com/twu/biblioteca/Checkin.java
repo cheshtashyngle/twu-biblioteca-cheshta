@@ -13,8 +13,10 @@ public class Checkin implements Command {
 
     @Override
     public void execute() {
-        library.checkin(bookName);
-        String checkinMessage = "Thank you for returning the book";
+        boolean flag = library.checkin(bookName);
+        String checkinMessage = "Thank you for returning the book\n";
+        if(!flag)
+            checkinMessage = "That is not a valid book to return\n";
         view.print(checkinMessage);
     }
 }

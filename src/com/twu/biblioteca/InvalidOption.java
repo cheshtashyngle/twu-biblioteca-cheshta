@@ -13,9 +13,12 @@ public class InvalidOption implements Command{
 
     @Override
     public void execute() {
-        String invalidMessage = "Select a valid option!";
+        String invalidMessage = "Select a valid option!\n";
         ArrayList<String> menu = new ArrayList<String>();
         menu.add("ListBooks");
+        menu.add("Checkout");
+        menu.add("Checkin");
+        menu.add("Quit");
         String menuString = "Menu\n";
         for(int menuElement =0;menuElement < menu.size();menuElement++) {
             menuString = menuString + (menuElement+1) + "." + menu.get(menuElement) + "\n";
