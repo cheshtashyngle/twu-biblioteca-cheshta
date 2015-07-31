@@ -16,8 +16,8 @@ public class BibliotecaAppTest {
         View view = mock(View.class);
         Parser parser = mock(Parser.class);
         Command listBooks = mock(ListBooks.class);
-        BibliotecaApp bibliotecaApp = new BibliotecaApp(view, parser);
         ArrayList<String> menu = new ArrayList<String>();
+        BibliotecaApp bibliotecaApp = new BibliotecaApp(view, parser, menu);
         menu.add("ListBooks");
         menu.add("Quit");
         String menuString = "Menu\n";
