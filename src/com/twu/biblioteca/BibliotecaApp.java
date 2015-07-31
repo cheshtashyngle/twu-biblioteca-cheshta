@@ -16,6 +16,7 @@ public class BibliotecaApp {
         welcomeMessage = "Welcome to Biblioteca Library Management System\n";
         this.menu = menu;
         menu.add("ListBooks");
+        menu.add("Checkout");
         menu.add("Quit");
         menuString = "Menu\n";
         for(int menuElement =0;menuElement < menu.size();menuElement++) {

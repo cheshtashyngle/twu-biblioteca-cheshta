@@ -9,7 +9,7 @@ import static org.mockito.Mockito.mock;
 public class ParserTest {
 
     @Test
-    public void shouldParseListBooksIntoListBooks() {
+    public void shouldParseListBooksInputIntoListBooks() {
         String input = "ListBooks";
         Library library = mock(Library.class);
         View view = mock(View.class);
@@ -19,7 +19,7 @@ public class ParserTest {
     }
 
     @Test
-    public void shouldParseInvalidIntoInvalidOption() {
+    public void shouldParseInvalidInputIntoInvalidOption() {
         String input = "2";
         Library library = mock(Library.class);
         View view = mock(View.class);
@@ -29,12 +29,22 @@ public class ParserTest {
     }
 
     @Test
-    public void shouldParseQuitIntoInvalidOption() {
+    public void shouldParseQuitInputIntoInvalidOption() {
         String input = "Quit";
         Library library = mock(Library.class);
         View view = mock(View.class);
         Parser parser = new Parser(library, view);
 
         assertEquals(Quit.class, parser.parseCommand(input).getClass());
+    }
+
+    @Test
+    public void shouldParseCheckoutInputIntoCheckout() {
+        String input = "Checkout";
+        Library library = mock(Library.class);
+        View view = mock(View.class);
+        Parser parser = new Parser(library, view);
+
+        assertEquals(Checkout.class, parser.parseCommand(input).getClass());
     }
 }

@@ -12,6 +12,8 @@ public class Parser {
     public Command parseCommand(String input) {
         if(input.equals("ListBooks"))
             return new ListBooks(library, view);
+        else if(input.equals("Checkout"))
+            return new Checkout();
         else if(input.equals("Quit"))
             return new Quit();
         else
