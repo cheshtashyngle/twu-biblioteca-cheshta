@@ -11,6 +11,6 @@ public class View {
 
     public String input() {
         Scanner sc = new Scanner(System.in);
-            return sc.next();
+            return sc.nextLine();
     }
 }

@@ -6,14 +6,14 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
 
-public class    BookTest {
+public class BookTest {
 
     @Test
     public void twoBooksAreSameIfThereNamesAreSame() {
         Book book1 = new Book("Head First Java", "Serran", "1990");
         Book book2 = new Book("Head First Java", "Serran", "1990");
 
-        assertEquals(book1, book2);
+        assertEquals(true, book1.equals(book2.name()));
     }
 
     @Test
@@ -21,6 +21,7 @@ public class    BookTest {
         Book book1 = new Book("Head First Java1", "Serran", "1990");
         Book book2 = new Book("Head First Java2", "Serran", "1990");
 
-        assertNotEquals(book1, book2);
+        assertEquals(false, book1.equals(book2.name()));
     }
+
 }

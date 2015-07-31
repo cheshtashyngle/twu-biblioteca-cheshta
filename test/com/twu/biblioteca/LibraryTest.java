@@ -30,7 +30,7 @@ public class LibraryTest {
         ArrayList<Book> books2 = new ArrayList<Book>();
         books2.add(book1);
 
-        library.checkout(book2);
+        library.checkout(book2.name());
 
         assertEquals(books2 , library.books());
     }

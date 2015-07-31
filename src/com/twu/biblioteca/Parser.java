@@ -10,13 +10,18 @@ public class Parser {
     }
 
     public Command parseCommand(String input) {
-        if(input.equals("ListBooks"))
+        if(input.equals("ListBooks")) {
             return new ListBooks(library, view);
-        else if(input.equals("Checkout"))
-            return new Checkout();
-        else if(input.equals("Quit"))
+        }
+        else if(input.equals("Checkout")) {
+            String bookName = view.input();
+            return new Checkout(library, view, bookName);
+        }
+        else if(input.equals("Quit")) {
             return new Quit();
-        else
+        }
+        else {
             return new InvalidOption(view, this);
+        }
     }
 }

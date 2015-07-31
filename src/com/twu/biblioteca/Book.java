@@ -11,14 +11,12 @@ public class Book {
         this.yearOfPublishing = yearOfPublishing;
     }
 
-    @Override
-    public boolean equals(Object other) {
-        if (this == other)
-            return true;
-        if (other == null || getClass() != other.getClass())
-            return false;
-        Book that = (Book) other;
-        return (this.name).equals(that.name);
+    public String name() {
+        return name;
+    }
+
+    public boolean equals(String thatName) {
+        return name.equals(thatName);
     }
 
     @Override
@@ -32,8 +30,8 @@ public class Book {
     @Override
     public String toString() {
         return  name + '|' +
-                ", author='" + author + '|' +
-                ", yearOfPublishing='" + yearOfPublishing + '|'
+               author + '|' +
+               yearOfPublishing + '|'
                 ;
     }
 }

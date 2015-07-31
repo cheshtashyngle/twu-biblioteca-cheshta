@@ -13,8 +13,13 @@ public class Library {
         return books;
     }
 
-    public void checkout(Book book1) {
-        books.remove(book1);
+    public void checkout(String bookname) {
+        for(int i = 0;i < books.size();i++) {
+            if(books.get(i).equals(bookname)) {
+                books.remove(books.get(i));
+                break;
+            }
+        }
     }
 
     @Override
