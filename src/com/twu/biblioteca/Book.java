@@ -28,4 +28,12 @@ public class Book {
         result = 31 * result + (yearOfPublishing != null ? yearOfPublishing.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return  name + '|' +
+                ", author='" + author + '|' +
+                ", yearOfPublishing='" + yearOfPublishing + '|'
+                ;
+    }
 }

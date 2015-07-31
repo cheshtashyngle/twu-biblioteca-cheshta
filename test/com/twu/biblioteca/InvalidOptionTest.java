@@ -23,14 +23,14 @@ public class InvalidOptionTest {
             menuString = menuString + (menuElement+1) + "." + menu.get(menuElement) + "\n";
         }
 
-        when(view.input()).thenReturn("1");
-        when(parser.parseCommand("1")).thenReturn(command);
+        when(view.input()).thenReturn("ListBooks");
+        when(parser.parseCommand("ListBooks")).thenReturn(command);
         invalidOption.execute();
 
         verify(view).print("Select a valid option!");
         verify(view).print(menuString);
         verify(view).input();
-        verify(parser).parseCommand("1");
-        //verify(command).execute();
+        verify(parser).parseCommand("ListBooks");
+        verify(command).execute();
     }
 }

@@ -13,13 +13,10 @@ public class ListBooks implements Command{
     }
 
     public void execute() {
-        ArrayList<String[]> books =library.books();
+        ArrayList<Book> books =library.books();
         String booksDetails = "";
         for(int bookNo = 0; bookNo < books.size();bookNo++) {
-            String bookDetail = "";
-            for(int bookAttribute = 0; bookAttribute < 3;bookAttribute++) {
-                bookDetail = bookDetail + books.get(bookNo)[bookAttribute] + "\t|";
-            }
+            String bookDetail = books.get(bookNo).toString();
             booksDetails = booksDetails + bookDetail + "\n";
         }
         view.print(booksDetails);

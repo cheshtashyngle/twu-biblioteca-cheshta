@@ -6,7 +6,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
 
-public class BookTest {
+public class    BookTest {
 
     @Test
     public void twoBooksAreSameIfThereNamesAreSame() {

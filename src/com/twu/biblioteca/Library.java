@@ -3,22 +3,23 @@ package com.twu.biblioteca;
 import java.util.ArrayList;
 
 public class Library {
-    private ArrayList<String[]> books;
+    private ArrayList<Book> books;
 
-    public Library(ArrayList<String[]> books) {
+    public Library(ArrayList<Book> books) {
         this.books = books;
     }
 
-    public ArrayList<String[]> books() {
+    public ArrayList<Book> books() {
         return books;
     }
 
-    public void checkout(String[] book1) {
-        //books.remove(book1);
+    public void checkout(Book book1) {
+        books.remove(book1);
     }
 
     @Override
     public int hashCode() {
         return books != null ? books.hashCode() : 0;
     }
+
 }
