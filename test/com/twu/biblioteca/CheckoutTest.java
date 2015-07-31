@@ -10,13 +10,12 @@ public class CheckoutTest {
 
     @Test
     public void shouldTellLibraryToTellWhatBooksIsHasAndAskViewToPrint() {
-       /* Library library = mock(Library.class);
+        Library library = mock(Library.class);
         View view = mock(View.class);
-        Checkout checkout = new Checkout(library, view);
+        Checkout checkout = new Checkout(library, view, "Head First With Java");
 
         checkout.execute();
 
-        verify(view).input();
-        verify(library).checkout(new Book());*/
+        verify(library).checkout("Head First With Java");
     }
 }

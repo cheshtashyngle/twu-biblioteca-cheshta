@@ -34,6 +34,4 @@ public class LibraryTest {
 
         assertEquals(books2 , library.books());
     }
-
-
 }

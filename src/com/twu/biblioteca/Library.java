@@ -13,13 +13,16 @@ public class Library {
         return books;
     }
 
-    public void checkout(String bookname) {
+    public boolean checkout(String bookname) {
+        boolean flag = false;
         for(int i = 0;i < books.size();i++) {
             if(books.get(i).equals(bookname)) {
                 books.remove(books.get(i));
+                flag = true;
                 break;
             }
         }
+        return flag;
     }
 
     @Override
