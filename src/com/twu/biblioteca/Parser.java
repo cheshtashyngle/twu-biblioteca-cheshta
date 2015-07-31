@@ -17,6 +17,10 @@ public class Parser {
             String bookName = view.input();
             return new Checkout(library, view, bookName);
         }
+        else if(input.equals("Checkin")) {
+            String bookName = view.input();
+            return new Checkin(library, view, bookName);
+        }
         else if(input.equals("Quit")) {
             return new Quit();
         }

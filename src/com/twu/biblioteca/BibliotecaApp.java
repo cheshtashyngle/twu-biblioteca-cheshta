@@ -17,6 +17,7 @@ public class BibliotecaApp {
         this.menu = menu;
         menu.add("ListBooks");
         menu.add("Checkout");
+        menu.add("CheckIn");
         menu.add("Quit");
         menuString = "Menu\n";
         for(int menuElement =0;menuElement < menu.size();menuElement++) {

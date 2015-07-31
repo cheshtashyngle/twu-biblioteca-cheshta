@@ -47,4 +47,14 @@ public class ParserTest {
 
         assertEquals(Checkout.class, parser.parseCommand(input).getClass());
     }
+
+    @Test
+    public void shouldParseCheckinInputIntoCheckin() {
+        String input = "Checkin";
+        Library library = mock(Library.class);
+        View view = mock(View.class);
+        Parser parser = new Parser(library, view);
+
+        assertEquals(Checkin.class, parser.parseCommand(input).getClass());
+    }
 }
