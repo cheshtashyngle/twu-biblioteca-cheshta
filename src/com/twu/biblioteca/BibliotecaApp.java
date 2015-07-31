@@ -23,7 +23,7 @@ public class BibliotecaApp {
         }
         view.print(menuString);
         String input = view.input();
-        ListBooks listBooks = parser.parseCommand(input);
-        listBooks.execute();
+        Command command = parser.parseCommand(input);
+        command.execute();
     }
 }

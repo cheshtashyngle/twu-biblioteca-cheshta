@@ -15,7 +15,7 @@ public class BibliotecaAppTest {
     public void runShouldCallMethods() {
         View view = mock(View.class);
         Parser parser = mock(Parser.class);
-        ListBooks listBooks = mock(ListBooks.class);
+        Command listBooks = mock(ListBooks.class);
         BibliotecaApp bibliotecaApp = new BibliotecaApp(view, parser);
         ArrayList<String> menu = new ArrayList<String>();
         menu.add("ListBooks");

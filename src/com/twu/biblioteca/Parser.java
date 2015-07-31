@@ -9,7 +9,10 @@ public class Parser {
         this.view = view;
     }
 
-    public ListBooks parseCommand(String input) {
-        return new ListBooks(library, view);
+    public Command parseCommand(String input) {
+        if(input == "1")
+            return new ListBooks(library, view);
+        else
+            return new InvalidOption();
     }
 }

@@ -3,7 +3,7 @@ package com.twu.biblioteca;
 import java.util.ArrayList;
 
 
-public class ListBooks {
+public class ListBooks implements Command{
     private Library library;
     private View view;
 
