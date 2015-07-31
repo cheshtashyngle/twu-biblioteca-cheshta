@@ -11,7 +11,7 @@ public class Main {
         books.add(book);
         Library library = new Library(books);
         Parser parser = new Parser(library, view);
-        ArrayList<String> menu = new ArrayList<String>();
+        Menu menu = new Menu();
         BibliotecaApp bibliotecaApp = new BibliotecaApp(view, parser, menu);
         bibliotecaApp.run();
     }
