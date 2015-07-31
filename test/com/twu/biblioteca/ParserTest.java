@@ -9,8 +9,8 @@ import static org.mockito.Mockito.mock;
 public class ParserTest {
 
     @Test
-    public void shouldParse1IntoListBooks() {
-        String input = "1";
+    public void shouldParseListBooksIntoListBooks() {
+        String input = "ListBooks";
         Library library = mock(Library.class);
         View view = mock(View.class);
         Parser parser = new Parser(library, view);
@@ -19,12 +19,22 @@ public class ParserTest {
     }
 
     @Test
-    public void shouldParseAllExcept1IntoInvalidOption() {
+    public void shouldParseInvalidIntoInvalidOption() {
         String input = "2";
         Library library = mock(Library.class);
         View view = mock(View.class);
         Parser parser = new Parser(library, view);
 
         assertEquals(InvalidOption.class, parser.parseCommand(input).getClass());
+    }
+
+    @Test
+    public void shouldParseQuitIntoInvalidOption() {
+        String input = "Quit";
+        Library library = mock(Library.class);
+        View view = mock(View.class);
+        Parser parser = new Parser(library, view);
+
+        assertEquals(Quit.class, parser.parseCommand(input).getClass());
     }
 }

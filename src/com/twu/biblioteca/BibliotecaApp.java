@@ -17,6 +17,7 @@ public class BibliotecaApp {
         view.print(welcomeMessage);
         ArrayList<String> menu = new ArrayList<String>();
         menu.add("ListBooks");
+        menu.add("Quit");
         String menuString = "Menu\n";
         for(int menuElement =0;menuElement < menu.size();menuElement++) {
             menuString = menuString + (menuElement+1) + "." + menu.get(menuElement) + "\n";
