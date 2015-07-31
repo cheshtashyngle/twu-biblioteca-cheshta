@@ -12,4 +12,13 @@ public class Library {
     public ArrayList<String[]> books() {
         return books;
     }
+
+    public void checkout(String[] book1) {
+        //books.remove(book1);
+    }
+
+    @Override
+    public int hashCode() {
+        return books != null ? books.hashCode() : 0;
+    }
 }
