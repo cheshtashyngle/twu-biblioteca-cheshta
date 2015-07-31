@@ -15,10 +15,10 @@
         <junit haltonfailure="true" printsummary="true" showoutput="yes" >
             <test name = "com.twu.biblioteca.ExampleTest" />
             <test name = "com.twu.biblioteca.ViewTest" />
-            <test name = "com.twu.biblioteca.MenuFormatterTest" />
             <test name = "com.twu.biblioteca.ParserTest" />
             <test name = "com.twu.biblioteca.LibraryTest" />
             <test name = "com.twu.biblioteca.ListBooksTest" />
+            <test name = "com.twu.biblioteca.BibliotecaAppTest" />
             <classpath>
                 <pathelement location="out" />
                 <path refid="classpath" />
@@ -34,7 +34,7 @@
     </target>
 
     <target name="run" depends="runjunit">
-        <java classname="com.twu.biblioteca.BibliotecaApp">
+        <java classname="com.twu.biblioteca.Main">
             <arg value="-h"/>
             <classpath>
                 <pathelement location="lib/twu_biblioteca-cheshta.jar"/>

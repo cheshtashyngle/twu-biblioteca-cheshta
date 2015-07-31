@@ -4,24 +4,26 @@ import java.util.ArrayList;
 
 
 public class BibliotecaApp {
+    private View view;
+    private Parser parser;
 
-    public static void main(String[] args) {
+    public BibliotecaApp(View view, Parser parser) {
+        this.view = view;
+        this.parser = parser;
+    }
+
+    public void run() {
         String welcomeMessage = "Welcome to Biblioteca Library Management System\n";
-        View view = new View();
-        Formatter formatter;
         view.print(welcomeMessage);
         ArrayList<String> menu = new ArrayList<String>();
         menu.add("ListBooks");
-        formatter = new MenuFormatter(menu);
-        String output = formatter.format();
-        view.print(output);
+        String menuString = "Menu\n";
+        for(int menuElement =0;menuElement < menu.size();menuElement++) {
+            menuString = menuString + (menuElement+1) + "." + menu.get(menuElement) + "\n";
+        }
+        view.print(menuString);
         String input = view.input();
-        ArrayList<String[]> books = new ArrayList<String[]>();
-        String[] book = {"Head First With Java", "Serran", "1990"};
-        books.add(book);
-        Library library = new Library(books);
-        Parser parser = new Parser(input, library, view);
-        ListBooks listBooks = parser.parseCommand();
+        ListBooks listBooks = parser.parseCommand(input);
         listBooks.execute();
     }
 }

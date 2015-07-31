@@ -13,8 +13,8 @@ public class ParserTest {
         String input = "1";
         Library library = mock(Library.class);
         View view = mock(View.class);
-        Parser parser = new Parser(input, library, view);
+        Parser parser = new Parser(library, view);
 
-        assertEquals(ListBooks.class, parser.parseCommand().getClass());
+        assertEquals(ListBooks.class, parser.parseCommand(input).getClass());
     }
 }
