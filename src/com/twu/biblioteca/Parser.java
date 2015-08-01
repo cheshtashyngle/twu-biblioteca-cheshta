@@ -13,13 +13,17 @@ public class Parser {
         if(input.equals("ListBooks")) {
             return new ListBooks(library, view);
         }
-        else if(input.equals("Checkout")) {
+        else if(input.equals("CheckoutBook")) {
             String bookName = view.input();
-            return new Checkout(library, view, bookName);
+            return new CheckoutBook(library, view, bookName);
         }
-        else if(input.equals("Checkin")) {
+        else if(input.equals("CheckinBook")) {
             String bookName = view.input();
-            return new Checkin(library, view, bookName);
+            return new CheckinBook(library, view, bookName);
+        }
+        else if(input.equals("CheckoutMovie")) {
+            String movieName = view.input();
+            return new CheckoutMovie(library, view, movieName);
         }
         else if(input.equals("Quit")) {
             return new Quit();
