@@ -1,11 +1,11 @@
 package com.twu.biblioteca;
 
-public class Checkout implements Command{
+public class CheckoutBook implements Command{
     private Library library;
     private View view;
     private String bookName;
 
-    public Checkout(Library library, View view, String bookName) {
+    public CheckoutBook(Library library, View view, String bookName) {
         this.library = library;
         this.view = view;
         this.bookName = bookName;

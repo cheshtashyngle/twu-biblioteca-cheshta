@@ -20,9 +20,10 @@
             <test name = "com.twu.biblioteca.ListBooksTest" />
             <test name = "com.twu.biblioteca.InvalidOptionTest" />
             <test name = "com.twu.biblioteca.BookTest" />
-            <test name = "com.twu.biblioteca.CheckoutTest" />
-            <test name = "com.twu.biblioteca.CheckinTest" />
+            <test name = "com.twu.biblioteca.CheckoutBookTest" />
+            <test name = "com.twu.biblioteca.CheckinBookTest" />
             <test name = "com.twu.biblioteca.MenuTest" />
+            <test name = "com.twu.biblioteca.MovieTest" />
             <classpath>
                 <pathelement location="out" />
                 <path refid="classpath" />

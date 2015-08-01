@@ -11,7 +11,7 @@ import static org.mockito.Mockito.when;
 public class ListBooksTest {
 
     @Test
-    public void shouldTellLibraryToTellWhatBooksIsHasAndAskViewToPrint() {
+    public void shouldTellLibraryToTellWhatBooksItHasAndAskViewToPrint() {
         Library library = mock(Library.class);
         View view = mock(View.class);
         ListBooks listBooks = new ListBooks(library, view);

@@ -17,7 +17,7 @@ public class Library {
     public boolean checkout(String bookName) {
         boolean flag = false;
         for(Book book : books) {
-            if(book.equals(bookName)) {
+            if(book.hasTitle(bookName)) {
                 books.remove(book);
                 issuedBooks.add(book);
                 flag = true;
@@ -27,15 +27,10 @@ public class Library {
         return flag;
     }
 
-    @Override
-    public int hashCode() {
-        return books != null ? books.hashCode() : 0;
-    }
-
     public boolean checkin(String bookName) {
         boolean flag = false;
         for(Book book : issuedBooks) {
-            if(book.equals(bookName)) {
+            if(book.hasTitle(bookName)) {
                 books.add(book);
                 issuedBooks.remove(book);
                 flag = true;
