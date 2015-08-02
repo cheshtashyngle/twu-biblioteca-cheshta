@@ -8,6 +8,7 @@ public class Menu {
     public Menu() {
         menu = new ArrayList<String>();
         menu.add("ListBooks");
+        menu.add("ListMovies");
         menu.add("CheckoutBook");
         menu.add("CheckinBook");
         menu.add("CheckoutMovie");

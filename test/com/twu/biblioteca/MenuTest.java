@@ -11,6 +11,6 @@ public class MenuTest {
     public void shouldReturnTheCorrectString() {
         Menu menu = new Menu();
 
-        assertEquals("Menu\n1.ListBooks\n2.CheckoutBook\n3.CheckinBook\n4.CheckoutMovie\n5.Quit\n", menu.toString());
+        assertEquals("Menu\n1.ListBooks\n2.ListMovies\n3.CheckoutBook\n4.CheckinBook\n5.CheckoutMovie\n6.Quit\n", menu.toString());
     }
 }
