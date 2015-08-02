@@ -15,6 +15,10 @@ public class Library {
         return book.items();
     }
 
+    public ArrayList<Item> movies() {
+        return movie.items();
+    }
+
     public boolean checkoutBook(String bookName) {
         return book.checkout(bookName);
     }

@@ -20,6 +20,17 @@ public class LibraryTest {
     }
 
     @Test
+    public void shouldCallSectionListItemsForMovies() {
+        Section book = mock(Section.class);
+        Section movie = mock(Section.class);
+        Library library = new Library(book, movie);
+
+        library.movies();
+
+        verify(movie).items();
+    }
+
+    @Test
     public void shouldCallSectionCheckoutForBook() {
         Section book = mock(Section.class);
         Section movie = mock(Section.class);

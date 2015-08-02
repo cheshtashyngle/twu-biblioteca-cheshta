@@ -67,4 +67,14 @@ public class ParserTest {
 
         assertEquals(CheckoutMovie.class, parser.parseCommand(input).getClass());
     }
+
+    @Test
+    public void shouldParseListMoviesInputListMovies() {
+        String input = "ListMovies";
+        Library library = mock(Library.class);
+        View view = mock(View.class);
+        Parser parser = new Parser(library, view);
+
+        assertEquals(ListMovies.class, parser.parseCommand(input).getClass());
+    }
 }
