@@ -10,6 +10,7 @@ public class Menu {
         menu.add("ListBooks");
         menu.add("ListCheckedOutBooks");
         menu.add("ListMovies");
+        menu.add("ListCheckedOutMovies");
         menu.add("CheckoutBook");
         menu.add("CheckinBook");
         menu.add("CheckoutMovie");
