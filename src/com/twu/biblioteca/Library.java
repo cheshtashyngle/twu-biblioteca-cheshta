@@ -38,4 +38,8 @@ public class Library {
     public ArrayList<Item> checkedOutBooks() {
         return book.checkedOutItems();
     }
+
+    public ArrayList<Item> checkedOutMovies() {
+        return movie.checkedOutItems();
+    }
 }
