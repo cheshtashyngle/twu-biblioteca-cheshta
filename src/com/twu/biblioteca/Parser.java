@@ -26,6 +26,9 @@ public class Parser {
         else if(inputs[0].equals("CheckoutMovie")) {
             return new CheckoutMovie(library, view, inputs[1]);
         }
+        else if(inputs[0].equals("CheckinMovie")) {
+            return new CheckinMovie(library, view, inputs[1]);
+        }
         else if(input.equals("Quit")) {
             return new Quit();
         }
