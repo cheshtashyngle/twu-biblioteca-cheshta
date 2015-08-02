@@ -34,4 +34,8 @@ public class Library {
     public boolean checkinMovie(String movieName)  {
         return movie.checkin(movieName);
     }
+
+    public ArrayList<Item> checkedOutBooks() {
+        return book.checkedOutItems();
+    }
 }

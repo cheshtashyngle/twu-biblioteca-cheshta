@@ -38,4 +38,8 @@ public class Section {
         }
         return flag;
     }
+
+    public ArrayList<Item> checkedOutItems() {
+        return issuedItems;
+    }
 }

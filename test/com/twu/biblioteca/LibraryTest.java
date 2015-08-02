@@ -73,4 +73,15 @@ public class LibraryTest {
 
         verify(movie).checkin("ABCD2");
     }
+
+    @Test
+    public void shouldCallSectionListCheckedItemsForBooks() {
+        Section book = mock(Section.class);
+        Section movie = mock(Section.class);
+        Library library = new Library(book, movie);
+
+        library.checkedOutBooks();
+
+        verify(book).checkedOutItems();
+    }
 }
