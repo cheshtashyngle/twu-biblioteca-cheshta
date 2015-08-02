@@ -1,6 +1,6 @@
 package com.twu.biblioteca;
 
-public class Movie extends Item{
+public class Movie extends Item {
 
     String year;
     String director;
@@ -11,5 +11,14 @@ public class Movie extends Item{
         this.year = year;
         this.director = director;
         this.movieRating = movieRating;
+    }
+
+    @Override
+    public String toString() {
+        return name + '|' +
+                year + '|' +
+                director + '|' +
+                movieRating + '|';
+
     }
 }
