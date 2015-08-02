@@ -27,7 +27,11 @@ public class Library {
         return book.checkin(bookName);
     }
 
-    public boolean checkoutMovie(String movieBook) {
-        return movie.checkout(movieBook);
+    public boolean checkoutMovie(String movieName) {
+        return movie.checkout(movieName);
+    }
+
+    public boolean checkinMovie(String movieName)  {
+        return movie.checkin(movieName);
     }
 }

@@ -13,6 +13,11 @@ public class CheckinMovie implements Command {
 
     @Override
     public void execute() {
-
+        String checkinMessage;
+        if(library.checkinMovie(movieName))
+            checkinMessage= "Thank you for returning the Movie\n";
+        else
+            checkinMessage = "That is not a valid Movie to return\n";
+        view.print(checkinMessage);
     }
 }

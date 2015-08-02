@@ -58,8 +58,19 @@ public class LibraryTest {
         Section movie = mock(Section.class);
         Library library = new Library(book, movie);
 
-        library.checkoutMovie("Head First With Java");
+        library.checkoutMovie("ABCD2");
 
-        verify(movie).checkout("Head First With Java");
+        verify(movie).checkout("ABCD2");
+    }
+
+    @Test
+    public void shouldCallSectionCheckinForMovie() {
+        Section book = mock(Section.class);
+        Section movie = mock(Section.class);
+        Library library = new Library(book, movie);
+
+        library.checkinMovie("ABCD2");
+
+        verify(movie).checkin("ABCD2");
     }
 }
