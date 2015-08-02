@@ -12,6 +12,7 @@ public class Menu {
         menu.add("CheckoutBook");
         menu.add("CheckinBook");
         menu.add("CheckoutMovie");
+        menu.add("CheckinMovie");
         menu.add("Quit");
     }
 
