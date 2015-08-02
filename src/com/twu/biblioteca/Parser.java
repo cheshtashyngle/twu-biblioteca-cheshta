@@ -20,6 +20,9 @@ public class Parser {
         else if(inputs[0].equals("ListMovies")) {
             return new ListMovies(library, view);
         }
+        else if(inputs[0].equals("ListCheckedOutMovies")) {
+            return new ListCheckOutMovies(library, view);
+        }
         else if(inputs[0].equals("CheckoutBook")) {
             return new CheckoutBook(library, view, inputs[1]);
         }
