@@ -5,17 +5,16 @@ import org.junit.Test;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
-
-public class CheckoutBookTest {
+public class CheckoutMovieTest {
 
     @Test
     public void shouldTellLibraryToPerformCheckout() {
         Library library = mock(Library.class);
         View view = mock(View.class);
-        CheckoutBook checkoutBook = new CheckoutBook(library, view, "Head First With Java");
+        CheckoutMovie checkoutMovie = new CheckoutMovie(library, view, "ABCD2");
 
-        checkoutBook.execute();
+        checkoutMovie.execute();
 
-        verify(library).checkoutBook("Head First With Java");
+        verify(library).checkoutMovie("ABCD2");
     }
 }
