@@ -13,9 +13,10 @@ public class CheckinBook implements Command {
 
     @Override
     public void execute() {
-        boolean flag = library.checkin(bookName);
-        String checkinMessage = "Thank you for returning the book\n";
-        if(!flag)
+        String checkinMessage;
+        if(library.checkinBook(bookName))
+            checkinMessage= "Thank you for returning the book\n";
+        else
             checkinMessage = "That is not a valid book to return\n";
         view.print(checkinMessage);
     }

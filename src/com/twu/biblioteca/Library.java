@@ -3,40 +3,27 @@ package com.twu.biblioteca;
 import java.util.ArrayList;
 
 public class Library {
-    private ArrayList<Book> books,issuedBooks;
+    private Section book;
+    private Section movie;
 
-    public Library(ArrayList<Book> books) {
-        this.books = books;
-        issuedBooks = new ArrayList<Book>();
+    public Library(Section book, Section movie) {
+        this.book = book;
+        this.movie = movie;
     }
 
-    public ArrayList<Book> books() {
-        return books;
+    public ArrayList<Item> books() {
+        return book.items();
     }
 
-    public boolean checkout(String bookName) {
-        boolean flag = false;
-        for(Book book : books) {
-            if(book.hasTitle(bookName)) {
-                books.remove(book);
-                issuedBooks.add(book);
-                flag = true;
-                break;
-            }
-        }
-        return flag;
+    public boolean checkoutBook(String bookName) {
+        return book.checkout(bookName);
     }
 
-    public boolean checkin(String bookName) {
-        boolean flag = false;
-        for(Book book : issuedBooks) {
-            if(book.hasTitle(bookName)) {
-                books.add(book);
-                issuedBooks.remove(book);
-                flag = true;
-                break;
-            }
-        }
-        return flag;
+    public boolean checkinBook(String bookName) {
+        return book.checkin(bookName);
+    }
+
+    public boolean checkoutMovie(String movieBook) {
+        return movie.checkout(movieBook);
     }
 }

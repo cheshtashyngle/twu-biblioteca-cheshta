@@ -16,6 +16,6 @@ public class CheckoutBookTest {
 
         checkoutBook.execute();
 
-        verify(library).checkout("Head First With Java");
+        verify(library).checkoutBook("Head First With Java");
     }
 }

@@ -24,6 +24,7 @@
             <test name = "com.twu.biblioteca.CheckinBookTest" />
             <test name = "com.twu.biblioteca.MenuTest" />
             <test name = "com.twu.biblioteca.MovieTest" />
+            <test name = "com.twu.biblioteca.SectionTest" />
             <classpath>
                 <pathelement location="out" />
                 <path refid="classpath" />

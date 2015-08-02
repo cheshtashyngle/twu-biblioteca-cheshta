@@ -13,9 +13,10 @@ public class CheckoutBook implements Command{
 
     @Override
     public void execute() {
-        boolean flag = library.checkout(bookName);
-        String checkoutMessage = "Thank you! Enjoy the book\n";
-        if(!flag)
+        String checkoutMessage;
+        if(library.checkoutBook(bookName))
+            checkoutMessage = "Thank you! Enjoy the book\n";
+        else
             checkoutMessage = "That book is not available\n";
         view.print(checkoutMessage);
     }

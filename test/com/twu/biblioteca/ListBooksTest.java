@@ -16,7 +16,7 @@ public class ListBooksTest {
         View view = mock(View.class);
         ListBooks listBooks = new ListBooks(library, view);
 
-        when(library.books()).thenReturn(new ArrayList<Book>());
+        when(library.books()).thenReturn(new ArrayList<Item>());
         listBooks.execute();
 
         verify(view).print("");

@@ -10,20 +10,18 @@ public class Parser {
     }
 
     public Command parseCommand(String input) {
-        if(input.equals("ListBooks")) {
+        String[] inputs = input.split("-");
+        if(inputs[0].equals("ListBooks")) {
             return new ListBooks(library, view);
         }
-        else if(input.equals("CheckoutBook")) {
-            String bookName = view.input();
-            return new CheckoutBook(library, view, bookName);
+        else if(inputs[0].equals("CheckoutBook")) {
+            return new CheckoutBook(library, view, inputs[1]);
         }
-        else if(input.equals("CheckinBook")) {
-            String bookName = view.input();
-            return new CheckinBook(library, view, bookName);
+        else if(inputs[0].equals("CheckinBook")) {
+            return new CheckinBook(library, view, inputs[1]);
         }
-        else if(input.equals("CheckoutMovie")) {
-            String movieName = view.input();
-            return new CheckoutMovie(library, view, movieName);
+        else if(inputs[0].equals("CheckoutMovie")) {
+            return new CheckoutMovie(library, view, inputs[1]);
         }
         else if(input.equals("Quit")) {
             return new Quit();

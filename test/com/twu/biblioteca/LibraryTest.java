@@ -1,54 +1,54 @@
 package com.twu.biblioteca;
 
 import org.junit.Test;
-import java.util.ArrayList;
 
-import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 
 public class LibraryTest {
 
     @Test
-    public void shouldReturnTheBooks() {
-        ArrayList<Book> books = new ArrayList<Book>();
-        Book book1 = new Book("Head First With Java", "Serran", "1990");
-        books.add(book1);
-        Library library = new Library(books);
+    public void shouldCallSectionListItemsForBooks() {
+        Section book = mock(Section.class);
+        Section movie = mock(Section.class);
+        Library library = new Library(book, movie);
 
-        assertEquals(books, library.books());
+        library.books();
+
+        verify(book).items();
     }
 
     @Test
-    public void shouldCheckoutBookIfAvailable() {
-        ArrayList<Book> books1 = new ArrayList<Book>();
-        Book book1 = new Book("Head First With Java", "Serran", "1990");
-        Book book2 = new Book("Two States", "Chetan Bhagat", "2000");
-        books1.add(book1);
-        books1.add(book2);
-        Library library = new Library(books1);
-        ArrayList<Book> books2 = new ArrayList<Book>();
-        books2.add(book1);
+    public void shouldCallSectionCheckoutForBook() {
+        Section book = mock(Section.class);
+        Section movie = mock(Section.class);
+        Library library = new Library(book, movie);
 
-        library.checkout(book2.name());
+        library.checkoutBook("Head First With Java");
 
-        assertEquals(books2 , library.books());
+        verify(book).checkout("Head First With Java");
     }
 
     @Test
-    public void shouldCheckinBookIfIssued() {
-        ArrayList<Book> books1 = new ArrayList<Book>();
-        Book book1 = new Book("Head First With Java", "Serran", "1990");
-        Book book2 = new Book("Two States", "Chetan Bhagat", "2000");
-        books1.add(book1);
-        books1.add(book2);
-        Library library = new Library(books1);
-        ArrayList<Book> books2 = new ArrayList<Book>();
-        books2.add(book1);
-        books2.add(book2);
+    public void shouldCallSectionCheckinForBook() {
+        Section book = mock(Section.class);
+        Section movie = mock(Section.class);
+        Library library = new Library(book, movie);
 
-        library.checkout(book2.name());
-        library.checkin(book2.name());
+        library.checkinBook("Head First With Java");
 
-        assertEquals(books2 , library.books());
+        verify(book).checkin("Head First With Java");
+    }
+
+    @Test
+    public void shouldCallSectionCheckoutForMovie() {
+        Section book = mock(Section.class);
+        Section movie = mock(Section.class);
+        Library library = new Library(book, movie);
+
+        library.checkoutMovie("Head First With Java");
+
+        verify(movie).checkout("Head First With Java");
     }
 }

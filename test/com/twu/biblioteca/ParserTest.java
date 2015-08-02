@@ -40,7 +40,7 @@ public class ParserTest {
 
     @Test
     public void shouldParseCheckoutBookInputIntoCheckoutBook() {
-        String input = "CheckoutBook";
+        String input = "CheckoutBook-Head First With Java";
         Library library = mock(Library.class);
         View view = mock(View.class);
         Parser parser = new Parser(library, view);
@@ -50,7 +50,7 @@ public class ParserTest {
 
     @Test
     public void shouldParseCheckinBookInputIntoCheckinBook() {
-        String input = "CheckinBook";
+        String input = "CheckinBook-Head First With Java";
         Library library = mock(Library.class);
         View view = mock(View.class);
         Parser parser = new Parser(library, view);
@@ -60,12 +60,11 @@ public class ParserTest {
 
     @Test
     public void shouldParseCheckinMovieInputIntoCheckinMovie() {
-        String input = "CheckoutMovie";
+        String input = "CheckoutMovie-ABCD2";
         Library library = mock(Library.class);
         View view = mock(View.class);
         Parser parser = new Parser(library, view);
 
         assertEquals(CheckoutMovie.class, parser.parseCommand(input).getClass());
     }
-
 }
