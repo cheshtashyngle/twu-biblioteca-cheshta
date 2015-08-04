@@ -30,6 +30,7 @@
             <test name = "com.twu.biblioteca.CheckinBookTest" />
             <test name = "com.twu.biblioteca.ListCheckedOutBooksTest" />
             <test name = "com.twu.biblioteca.ListCheckedOutMoviesTest" />
+            <test name = "com.twu.biblioteca.UserTest" />
             <classpath>
                 <pathelement location="out" />
                 <path refid="classpath" />

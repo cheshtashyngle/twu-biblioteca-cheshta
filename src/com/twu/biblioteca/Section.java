@@ -27,16 +27,14 @@ public class Section {
     }
 
     public boolean checkin(String bookName) {
-        boolean flag = false;
         for(Item item : issuedItems) {
             if(item.hasTitle(bookName)) {
                 items.add(item);
                 issuedItems.remove(item);
-                flag = true;
-                break;
+                return true;
             }
         }
-        return flag;
+        return false;
     }
 
     public ArrayList<Item> checkedOutItems() {

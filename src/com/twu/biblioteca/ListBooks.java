@@ -15,8 +15,8 @@ public class ListBooks implements Command{
     public void execute() {
         ArrayList<Item> books =library.books();
         String booksDetails = "";
-        for(int bookNo = 0; bookNo < books.size();bookNo++) {
-            String bookDetail = books.get(bookNo).toString();
+        for (Item book : books) {
+            String bookDetail = book.toString();
             booksDetails = booksDetails + bookDetail + "\n";
         }
         view.print(booksDetails);
