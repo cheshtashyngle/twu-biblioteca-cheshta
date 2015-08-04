@@ -1,57 +1,61 @@
 <?xml version="1.0"?>
 
-<project name="calculator" default="runjunit">
+<project name="biblioteca" default="runjunit" basedir=".">
+
+    <property name="lib.dir" value="lib"/>
+
+    <mkdir dir="build" />
 
     <path id="classpath">
-        <fileset dir="lib" includes="*.jar"/>
+        <fileset dir="${lib.dir}" includes="junit-4.11.jar"/>
+        <fileset dir="${lib.dir}" includes="mockito-all-1.9.5.jar"/>
     </path>
 
     <target name="compile">
-        <javac srcdir="src" includeantruntime="false" destdir="out" classpathref="classpath" />
-        <javac srcdir="test" includeantruntime="false" destdir="out" classpathref="classpath" />
+        <javac srcdir="src;test" includeantruntime="false" destdir="build" classpathref="classpath"/>
     </target>
 
-    <target name="runjunit" depends="compile" >
-        <junit haltonfailure="true" printsummary="true" showoutput="yes" >
-            <test name = "com.twu.biblioteca.ExampleTest" />
-            <test name = "com.twu.biblioteca.ViewTest" />
-            <test name = "com.twu.biblioteca.ParserTest" />
-            <test name = "com.twu.biblioteca.LibraryTest" />
-            <test name = "com.twu.biblioteca.ListBooksTest" />
-            <test name = "com.twu.biblioteca.InvalidOptionTest" />
-            <test name = "com.twu.biblioteca.BookTest" />
-            <test name = "com.twu.biblioteca.CheckoutBookTest" />
-            <test name = "com.twu.biblioteca.CheckinBookTest" />
-            <test name = "com.twu.biblioteca.MenuTest" />
-            <test name = "com.twu.biblioteca.MovieTest" />
-            <test name = "com.twu.biblioteca.SectionTest" />
-            <test name = "com.twu.biblioteca.CheckoutMovieTest" />
-            <test name = "com.twu.biblioteca.ListMoviesTest" />
-            <test name = "com.twu.biblioteca.CheckinBookTest" />
-            <test name = "com.twu.biblioteca.ListCheckedOutBooksTest" />
-            <test name = "com.twu.biblioteca.ListCheckedOutMoviesTest" />
-            <test name = "com.twu.biblioteca.UserTest" />
+    <target name="runjunit" depends="compile">
+        <junit haltonfailure="true" printsummary="true" showoutput="yes">
+            <test name="com.twu.biblioteca.menu.MenuTest" />
+            <test name="com.twu.biblioteca.model.BookTest" />
+            <test name="com.twu.biblioteca.model.LibraryTest" />
+            <test name="com.twu.biblioteca.model.MovieTest" />
+            <test name="com.twu.biblioteca.model.SectionTest" />
+            <test name="com.twu.biblioteca.model.UserTest" />
+            <test name="com.twu.biblioteca.operations.CheckoutBookTest" />
+            <test name="com.twu.biblioteca.operations.CheckoutMovieTest" />
+            <test name="com.twu.biblioteca.operations.CheckinBookTest" />
+            <test name="com.twu.biblioteca.operations.CheckinMovieTest" />
+            <test name="com.twu.biblioteca.operations.InvalidOptionTest" />
+            <test name="com.twu.biblioteca.operations.ListBooksTest" />
+            <test name="com.twu.biblioteca.operations.ListCheckedOutBooksTest" />
+            <test name="com.twu.biblioteca.operations.ListCheckedOutMoviesTest" />
+            <test name="com.twu.biblioteca.operations.ListMoviesTest" />
+            <test name="com.twu.biblioteca.parser.ParserTest" />
+            <test name="com.twu.biblioteca.view.ViewTest" />
             <classpath>
-                <pathelement location="out" />
-                <path refid="classpath" />
+                <pathelement location="build"/>
+                <path refid="classpath"/>
             </classpath>
+            <formatter type="plain" usefile="false"/>
         </junit>
     </target>
 
-    <target name ="createjar" depends="runjunit">
-        <jar destfile="lib/twu_biblioteca-cheshta.jar"
-             basedir="out"
-             excludes="**/Test.class"
-                />
+    <target name="createjar" depends="runjunit">
+        <jar destfile="lib/app.jar"
+             basedir="build"
+             excludes="**/Test.class"/>
     </target>
 
-    <target name="run" depends="runjunit">
+    <target name="run" depends="createjar">
         <java classname="com.twu.biblioteca.Main">
             <arg value="-h"/>
             <classpath>
-                <pathelement location="lib/twu_biblioteca-cheshta.jar"/>
+                <pathelement location="lib/app.jar"/>
                 <pathelement path="${java.class.path}"/>
             </classpath>
         </java>
     </target>
+
 </project>

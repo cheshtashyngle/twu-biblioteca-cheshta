@@ -1,5 +1,11 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.controller.BibliotecaApp;
+import com.twu.biblioteca.menu.Menu;
+import com.twu.biblioteca.model.*;
+import com.twu.biblioteca.parser.Parser;
+import com.twu.biblioteca.view.View;
+
 import java.util.ArrayList;
 
 public class Main {
