@@ -1,8 +1,7 @@
 package com.twu.biblioteca.operations;
 
 import com.twu.biblioteca.model.Library;
-import com.twu.biblioteca.operations.CheckinBook;
-import com.twu.biblioteca.view.View;
+import com.twu.biblioteca.console.Console;
 import org.junit.Test;
 
 import static org.mockito.Mockito.mock;
@@ -13,8 +12,8 @@ public class CheckinBookTest {
     @Test
     public void shouldTellLibraryToPerformCheckin() {
         Library library = mock(Library.class);
-        View view = mock(View.class);
-        CheckinBook checkinBook = new CheckinBook(library, view, "Head First With Java");
+        Console console = mock(Console.class);
+        CheckinBook checkinBook = new CheckinBook(library, console, "Head First With Java");
 
         checkinBook.execute();
 

@@ -1,6 +1,5 @@
-package com.twu.biblioteca.view;
+package com.twu.biblioteca.console;
 
-import com.twu.biblioteca.view.View;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,7 +12,7 @@ import java.io.PrintStream;
 import static org.junit.Assert.assertEquals;
 
 
-public class ViewTest {
+public class ConsoleTest {
     private ByteArrayOutputStream os = new ByteArrayOutputStream();
     private ByteArrayInputStream is = new ByteArrayInputStream("My".getBytes());
     PrintStream printStreamOut;
@@ -29,18 +28,18 @@ public class ViewTest {
 
     @Test
     public void shouldPrintCorrectWelcomeMessage() {
-        View view = new View();
+        Console console = new Console();
         String welcomeMessage = "Welcome to Biblioteca Library Management System\n";
-        view.print(welcomeMessage);
+        console.print(welcomeMessage);
 
         assertEquals("Welcome to Biblioteca Library Management System\n", os.toString());
     }
 
     @Test
     public void shouldReturnTheCorrectInput() {
-        View view = new View();
+        Console console = new Console();
 
-        assertEquals("My", view.input());
+        assertEquals("My", console.input());
     }
 
     @After

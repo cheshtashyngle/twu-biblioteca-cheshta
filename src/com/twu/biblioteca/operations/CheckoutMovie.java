@@ -1,16 +1,16 @@
 package com.twu.biblioteca.operations;
 
 import com.twu.biblioteca.model.Library;
-import com.twu.biblioteca.view.View;
+import com.twu.biblioteca.console.Console;
 
 public class CheckoutMovie implements Command {
     private Library library;
-    private View view;
+    private Console console;
     String movieName;
 
-    public CheckoutMovie(Library library, View view, String movieName) {
+    public CheckoutMovie(Library library, Console console, String movieName) {
         this.library = library;
-        this.view = view;
+        this.console = console;
         this.movieName = movieName;
     }
 
@@ -21,6 +21,6 @@ public class CheckoutMovie implements Command {
             checkoutMessage = "Thank you! Enjoy the movie\n";
         else
             checkoutMessage = "That movie is not available\n";
-        view.print(checkoutMessage);
+        console.print(checkoutMessage);
     }
 }

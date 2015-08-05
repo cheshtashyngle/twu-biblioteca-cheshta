@@ -1,8 +1,7 @@
 package com.twu.biblioteca.operations;
 
 import com.twu.biblioteca.model.Library;
-import com.twu.biblioteca.operations.CheckoutMovie;
-import com.twu.biblioteca.view.View;
+import com.twu.biblioteca.console.Console;
 import org.junit.Test;
 
 import static org.mockito.Mockito.mock;
@@ -13,8 +12,8 @@ public class CheckoutMovieTest {
     @Test
     public void shouldTellLibraryToPerformCheckout() {
         Library library = mock(Library.class);
-        View view = mock(View.class);
-        CheckoutMovie checkoutMovie = new CheckoutMovie(library, view, "ABCD2");
+        Console console = mock(Console.class);
+        CheckoutMovie checkoutMovie = new CheckoutMovie(library, console, "ABCD2");
 
         checkoutMovie.execute();
 

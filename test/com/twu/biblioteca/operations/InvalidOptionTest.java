@@ -2,10 +2,7 @@ package com.twu.biblioteca.operations;
 
 import com.twu.biblioteca.parser.Parser;
 import com.twu.biblioteca.menu.Menu;
-import com.twu.biblioteca.operations.Command;
-import com.twu.biblioteca.operations.InvalidOption;
-import com.twu.biblioteca.operations.ListBooks;
-import com.twu.biblioteca.view.View;
+import com.twu.biblioteca.console.Console;
 import org.junit.Test;
 
 import static org.mockito.Mockito.mock;
@@ -16,19 +13,19 @@ public class InvalidOptionTest {
 
     @Test
     public void shouldTellViewToPrintInvalidMessageAndDisplayMenuAgain() {
-        View view = mock(View.class);
+        Console console = mock(Console.class);
         Parser parser = mock(Parser.class);
         Command command = mock(ListBooks.class);
-        InvalidOption invalidOption = new InvalidOption(view, parser);
+        InvalidOption invalidOption = new InvalidOption(console, parser);
         Menu menu = new Menu();
 
-        when(view.input()).thenReturn("ListBooks");
+        when(console.input()).thenReturn("ListBooks");
         when(parser.parseCommand("ListBooks")).thenReturn(command);
         invalidOption.execute();
 
-        verify(view).print("Select a valid option!\n");
-        verify(view).print(menu.toString());
-        verify(view).input();
+        verify(console).print("Select a valid option!\n");
+        verify(console).print(menu.toString());
+        verify(console).input();
         verify(parser).parseCommand("ListBooks");
         verify(command).execute();
     }

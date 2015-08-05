@@ -1,6 +1,6 @@
 package com.twu.biblioteca.operations;
 
-import com.twu.biblioteca.view.View;
+import com.twu.biblioteca.console.Console;
 import com.twu.biblioteca.model.Item;
 import com.twu.biblioteca.model.Library;
 
@@ -8,11 +8,11 @@ import java.util.ArrayList;
 
 public class ListCheckOutBooks implements Command {
     private Library library;
-    private View view;
+    private Console console;
 
-    public ListCheckOutBooks(Library library, View view) {
+    public ListCheckOutBooks(Library library, Console console) {
         this.library = library;
-        this.view = view;
+        this.console = console;
     }
 
     @Override
@@ -23,6 +23,6 @@ public class ListCheckOutBooks implements Command {
             String bookDetail = checkedOutBooks.get(bookNo).toString();
             booksDetails = booksDetails + bookDetail + "\n";
         }
-        view.print(booksDetails);
+        console.print(booksDetails);
     }
 }

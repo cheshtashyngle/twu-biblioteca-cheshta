@@ -17,23 +17,24 @@
 
     <target name="runjunit" depends="compile">
         <junit haltonfailure="true" printsummary="true" showoutput="yes">
-            <test name="com.twu.biblioteca.menu.MenuTest" />
-            <test name="com.twu.biblioteca.model.BookTest" />
-            <test name="com.twu.biblioteca.model.LibraryTest" />
-            <test name="com.twu.biblioteca.model.MovieTest" />
-            <test name="com.twu.biblioteca.model.SectionTest" />
-            <test name="com.twu.biblioteca.model.UserTest" />
-            <test name="com.twu.biblioteca.operations.CheckoutBookTest" />
-            <test name="com.twu.biblioteca.operations.CheckoutMovieTest" />
-            <test name="com.twu.biblioteca.operations.CheckinBookTest" />
-            <test name="com.twu.biblioteca.operations.CheckinMovieTest" />
-            <test name="com.twu.biblioteca.operations.InvalidOptionTest" />
-            <test name="com.twu.biblioteca.operations.ListBooksTest" />
-            <test name="com.twu.biblioteca.operations.ListCheckedOutBooksTest" />
-            <test name="com.twu.biblioteca.operations.ListCheckedOutMoviesTest" />
-            <test name="com.twu.biblioteca.operations.ListMoviesTest" />
-            <test name="com.twu.biblioteca.parser.ParserTest" />
-            <test name="com.twu.biblioteca.view.ViewTest" />
+            <test name = "com.twu.biblioteca.menu.MenuTest" />
+            <test name = "com.twu.biblioteca.model.BookTest" />
+            <test name = "com.twu.biblioteca.model.LibraryTest" />
+            <test name = "com.twu.biblioteca.model.MovieTest" />
+            <test name = "com.twu.biblioteca.model.SectionTest" />
+            <test name = "com.twu.biblioteca.model.UserTest" />
+            <test name = "com.twu.biblioteca.operations.CheckoutBookTest" />
+            <test name = "com.twu.biblioteca.operations.CheckoutMovieTest" />
+            <test name = "com.twu.biblioteca.operations.CheckinBookTest" />
+            <test name = "com.twu.biblioteca.operations.CheckinMovieTest" />
+            <test name = "com.twu.biblioteca.operations.InvalidOptionTest" />
+            <test name = "com.twu.biblioteca.operations.ListBooksTest" />
+            <test name = "com.twu.biblioteca.operations.ListCheckedOutBooksTest" />
+            <test name = "com.twu.biblioteca.operations.ListCheckedOutMoviesTest" />
+            <test name = "com.twu.biblioteca.operations.ListMoviesTest" />
+            <test name = "com.twu.biblioteca.parser.ParserTest" />
+            <test name = "com.twu.biblioteca.console.ConsoleTest" />
+            <test name = "com.twu.biblioteca.view.WelcomeViewTest" />
             <classpath>
                 <pathelement location="build"/>
                 <path refid="classpath"/>

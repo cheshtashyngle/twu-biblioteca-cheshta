@@ -3,26 +3,27 @@ package com.twu.biblioteca.controller;
 import com.twu.biblioteca.menu.Menu;
 import com.twu.biblioteca.parser.Parser;
 import com.twu.biblioteca.operations.Command;
+import com.twu.biblioteca.console.Console;
 import com.twu.biblioteca.view.View;
 
 public class BibliotecaApp {
-    private View view;
+    private Console console;
     private Parser parser;
-    private String welcomeMessage;
     private Menu menu;
+    private View startView;
 
-    public BibliotecaApp(View view, Parser parser, Menu menu) {
-        this.view = view;
+    public BibliotecaApp(Console console, Parser parser, Menu menu, View startView) {
+        this.console = console;
         this.parser = parser;
-        welcomeMessage = "Welcome to Biblioteca Library Management System\n";
         this.menu = menu;
+        this.startView = startView;
     }
 
     public void run() {
-        view.print(welcomeMessage);
+        startView.performAction();
         while(true) {
-            view.print(menu.toString());
-            String input = view.input();
+            console.print(menu.toString());
+            String input = console.input();
             Command command = parser.parseCommand(input);
             command.execute();
         }
