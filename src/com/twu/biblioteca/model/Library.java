@@ -1,7 +1,5 @@
 package com.twu.biblioteca.model;
 
-import java.util.ArrayList;
-
 public class Library {
     private Section book;
     private Section movie;

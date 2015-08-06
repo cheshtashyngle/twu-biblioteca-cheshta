@@ -19,6 +19,5 @@ public class Movie extends Item {
                 year + '|' +
                 director + '|' +
                 movieRating + '|';
-
     }
 }

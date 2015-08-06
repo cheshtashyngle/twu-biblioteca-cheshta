@@ -36,6 +36,7 @@
             <test name = "com.twu.biblioteca.console.ConsoleTest" />
             <test name = "com.twu.biblioteca.view.WelcomeViewTest" />
             <test name = "com.twu.biblioteca.view.MenuViewTest" />
+            <test name = "com.twu.biblioteca.view.LoginViewTest" />
             <classpath>
                 <pathelement location="build"/>
                 <path refid="classpath"/>
