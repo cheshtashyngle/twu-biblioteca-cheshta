@@ -12,8 +12,12 @@ public class Section {
         issuedItems = new ArrayList<Item>();
     }
 
-    public ArrayList<Item> items() {
-        return items;
+    public String items() {
+        String itemsDetails = "";
+        for(Item item : items) {
+            itemsDetails = itemsDetails + item.toString() + '\n';
+        }
+        return itemsDetails;
     }
 
     public boolean checkout(String name) {
@@ -38,7 +42,11 @@ public class Section {
         return false;
     }
 
-    public ArrayList<Item> checkedOutItems() {
-        return issuedItems;
+    public String checkedOutItems() {
+        String checkedOutItemsDetails = "";
+        for(Item checkedOutItem : issuedItems) {
+            checkedOutItemsDetails = checkedOutItemsDetails + checkedOutItem.toString() + '\n';
+        }
+        return checkedOutItemsDetails;
     }
 }

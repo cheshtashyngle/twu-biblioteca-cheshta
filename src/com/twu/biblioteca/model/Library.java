@@ -11,11 +11,11 @@ public class Library {
         this.movie = movie;
     }
 
-    public ArrayList<Item> books() {
+    public String books() {
         return book.items();
     }
 
-    public ArrayList<Item> movies() {
+    public String movies() {
         return movie.items();
     }
 
@@ -35,11 +35,11 @@ public class Library {
         return movie.checkin(movieName);
     }
 
-    public ArrayList<Item> checkedOutBooks() {
+    public String checkedOutBooks() {
         return book.checkedOutItems();
     }
 
-    public ArrayList<Item> checkedOutMovies() {
+    public String checkedOutMovies() {
         return movie.checkedOutItems();
     }
 }

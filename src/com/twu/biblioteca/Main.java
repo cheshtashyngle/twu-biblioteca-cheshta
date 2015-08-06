@@ -1,13 +1,10 @@
 package com.twu.biblioteca;
 
 import com.twu.biblioteca.controller.BibliotecaApp;
-import com.twu.biblioteca.menu.Menu;
 import com.twu.biblioteca.model.*;
 import com.twu.biblioteca.parser.Parser;
 import com.twu.biblioteca.console.Console;
-import com.twu.biblioteca.view.MenuView;
-import com.twu.biblioteca.view.View;
-import com.twu.biblioteca.view.WelcomeView;
+import com.twu.biblioteca.view.*;
 
 import java.util.ArrayList;
 
@@ -24,11 +21,21 @@ public class Main {
         movies.add(movie);
         Section movieSection = new Section(movies);
         Library library = new Library(bookSection, movieSection);
-        Parser parser = new Parser(library, console);
-        Menu menu = new Menu();
-        View menuView = new MenuView();;
+        MenuView menuView = new MenuView(console);;
+        View listBooks = new ListBooks(library, console, menuView);
+        View listCheckedOutBooks = new ListCheckOutBooks(library, console, menuView);
+        View listMovies = new ListMovies(library, console, menuView);
+        View listCheckedOutMovies = new ListCheckOutMovies(library, console, menuView);
+        View checkoutBook = new CheckoutBook(library, console, menuView);
+        View checkinBook = new CheckinBook(library, console, menuView);
+        View checkoutMovie = new CheckoutMovie(library, console, menuView);
+        View checkinMovie = new CheckinMovie(library, console, menuView);
+        View quit = new Quit();
+        View invalidOption = new InvalidOption(console, menuView);
+        Parser parser = new Parser(listBooks, listCheckedOutBooks, listMovies, listCheckedOutMovies, checkoutBook, checkinBook, checkoutMovie, checkinMovie, quit, invalidOption);
+        menuView.setParser(parser);
         WelcomeView welcomeView = new WelcomeView(console, menuView);
-        BibliotecaApp bibliotecaApp = new BibliotecaApp(console, parser, menu, welcomeView);
+        BibliotecaApp bibliotecaApp = new BibliotecaApp(welcomeView);
         bibliotecaApp.run();
     }
 }

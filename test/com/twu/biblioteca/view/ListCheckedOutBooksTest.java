@@ -1,14 +1,11 @@
-package com.twu.biblioteca.operations;
+package com.twu.biblioteca.view;
 
 import org.junit.Test;
-import com.twu.biblioteca.model.Item;
 import com.twu.biblioteca.model.Library;
 import com.twu.biblioteca.console.Console;
-import java.util.ArrayList;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 
 public class ListCheckedOutBooksTest {
 
@@ -16,11 +13,12 @@ public class ListCheckedOutBooksTest {
     public void shouldTellLibraryToTellWhatCheckedOutBooksItHasAndAskViewToPrint() {
         Library library = mock(Library.class);
         Console console = mock(Console.class);
-        ListCheckOutBooks listCheckedOutBooks = new ListCheckOutBooks(library, console);
+        View menuView = mock(MenuView.class);
+        ListCheckOutBooks listCheckOutBooks = new ListCheckOutBooks(library, console, menuView);
 
-        when(library.checkedOutBooks()).thenReturn(new ArrayList<Item>());
-        listCheckedOutBooks.execute();
+        listCheckOutBooks.performAction();
 
-        verify(console).print("");
+        verify(console).print(library.books());
+        verify(menuView).performAction();
     }
 }

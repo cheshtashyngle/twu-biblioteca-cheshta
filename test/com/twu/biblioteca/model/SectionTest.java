@@ -1,8 +1,5 @@
 package com.twu.biblioteca.model;
 
-import com.twu.biblioteca.model.Book;
-import com.twu.biblioteca.model.Item;
-import com.twu.biblioteca.model.Section;
 import org.junit.Test;
 import java.util.ArrayList;
 
@@ -18,7 +15,7 @@ public class SectionTest {
         books.add(book1);
         Section section = new Section(books);
 
-        assertEquals(books, section.items());
+        assertEquals("Head First With Java|Serran|1990|\n", section.items());
     }
 
     @Test
@@ -34,7 +31,7 @@ public class SectionTest {
 
         section.checkout(book2.name());
 
-        assertEquals(books2 , section.items());
+        assertEquals("Head First With Java|Serran|1990|\n" , section.items());
     }
 
     @Test
@@ -52,6 +49,6 @@ public class SectionTest {
         section.checkout(book2.name());
         section.checkin(book2.name());
 
-        assertEquals(books2, section.items());
+        assertEquals("Head First With Java|Serran|1990|\nTwo States|Chetan Bhagat|2000|\n", section.items());
     }
 }

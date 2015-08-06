@@ -1,4 +1,4 @@
-package com.twu.biblioteca.operations;
+package com.twu.biblioteca.view;
 
 import com.twu.biblioteca.console.Console;
 import org.junit.Test;
@@ -11,9 +11,10 @@ public class InvalidOptionTest {
     @Test
     public void shouldTellViewToPrintInvalidMessageAndDisplayMenuAgain() {
         Console console = mock(Console.class);
-        InvalidOption invalidOption = new InvalidOption(console);
+        View menuView = mock(MenuView.class);
+        InvalidOption invalidOption = new InvalidOption(console, menuView);
 
-        invalidOption.execute();
+        invalidOption.performAction();
 
         verify(console).print("Select a valid option!\n");
     }

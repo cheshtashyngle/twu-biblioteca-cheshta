@@ -1,7 +1,5 @@
 package com.twu.biblioteca.model;
 
-import com.twu.biblioteca.model.Library;
-import com.twu.biblioteca.model.Section;
 import org.junit.Test;
 
 import static org.mockito.Mockito.mock;

@@ -1,49 +1,63 @@
 package com.twu.biblioteca.parser;
 
-import com.twu.biblioteca.model.*;
-import com.twu.biblioteca.operations.*;
-import com.twu.biblioteca.console.Console;
+import com.twu.biblioteca.view.*;
 
 public class Parser {
-    private Library library;
-    private Console console;
 
-    public Parser(Library library, Console console) {
-        this.library = library;
-        this.console = console;
+    private View listBooks;
+    private View listCheckedOutBooks;
+    private View listMovies;
+    private View listCheckedOutMovies;
+    private View checkoutBook;
+    private View checkinBook;
+    private View checkoutMovie;
+    private View checkinMovie;
+    private View quit;
+    private View invalidOption;
+
+    public Parser(View listBooks, View listCheckedOutBooks, View listMovies, View listCheckedOutMovies, View checkoutBook, View checkinBook, View checkoutMovie, View checkinMovie, View quit, View invalidOption) {
+        this.listBooks = listBooks;
+        this.listCheckedOutBooks = listCheckedOutBooks;
+        this.listMovies = listMovies;
+        this.listCheckedOutMovies = listCheckedOutMovies;
+        this.checkoutBook = checkoutBook;
+        this.checkinBook = checkinBook;
+        this.checkoutMovie = checkoutMovie;
+        this.checkinMovie = checkinMovie;
+        this.quit = quit;
+        this.invalidOption = invalidOption;
     }
 
-    public Command parseCommand(String input) {
-        String[] inputs = input.split("-");
-        if(inputs[0].equals("ListBooks")) {
-            return new ListBooks(library, console);
+    public View parseCommand(String input) {
+        if(input.equals("ListBooks")) {
+            return listBooks;
         }
-        else if(inputs[0].equals("ListCheckedOutBooks")) {
-            return new ListCheckOutBooks(library, console);
+        else if(input.equals("ListCheckedOutBooks")) {
+            return listCheckedOutBooks;
         }
-        else if(inputs[0].equals("ListMovies")) {
-            return new ListMovies(library, console);
+        else if(input.equals("ListMovies")) {
+            return listMovies;
         }
-        else if(inputs[0].equals("ListCheckedOutMovies")) {
-            return new ListCheckOutMovies(library, console);
+        else if(input.equals("ListCheckedOutMovies")) {
+            return listCheckedOutMovies;
         }
-        else if(inputs[0].equals("CheckoutBook")) {
-            return new CheckoutBook(library, console, inputs[1]);
+        else if(input.equals("CheckoutBook")) {
+            return checkoutBook;
         }
-        else if(inputs[0].equals("CheckinBook")) {
-            return new CheckinBook(library, console, inputs[1]);
+        else if(input.equals("CheckinBook")) {
+            return checkinBook;
         }
-        else if(inputs[0].equals("CheckoutMovie")) {
-            return new CheckoutMovie(library, console, inputs[1]);
+        else if(input.equals("CheckoutMovie")) {
+            return checkoutMovie;
         }
-        else if(inputs[0].equals("CheckinMovie")) {
-            return new CheckinMovie(library, console, inputs[1]);
+        else if(input.equals("CheckinMovie")) {
+            return checkinMovie;
         }
         else if(input.equals("Quit")) {
-            return new Quit();
+            return quit;
         }
         else {
-            return new InvalidOption(console, this);
+            return invalidOption;
         }
     }
 }

@@ -1,8 +1,6 @@
 package com.twu.biblioteca.parser;
 
-import com.twu.biblioteca.model.*;
-import com.twu.biblioteca.operations.*;
-import com.twu.biblioteca.console.*;
+import com.twu.biblioteca.view.*;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -14,100 +12,188 @@ public class ParserTest {
     @Test
     public void shouldParseListBooksInputIntoListBooks() {
         String input = "ListBooks";
-        Library library = mock(Library.class);
-        Console console = mock(Console.class);
-        Parser parser = new Parser(library, console);
+        View listBooks = mock(ListBooks.class);
+        View listCheckedOutBooks = mock(ListCheckOutBooks.class);
+        View listMovies = mock(ListMovies.class);
+        View listCheckedOutMovies = mock(ListCheckOutMovies.class);
+        View checkoutBook = mock(CheckoutBook.class);
+        View checkinBook = mock(CheckinBook.class);
+        View checkoutMovie = mock(CheckoutMovie.class);
+        View checkinMovie = mock(CheckinMovie.class);
+        View quit = mock(Quit.class);
+        View invalidOption = mock(InvalidOption.class);
 
-        assertEquals(ListBooks.class, parser.parseCommand(input).getClass());
+        Parser parser = new Parser(listBooks, listCheckedOutBooks, listMovies, listCheckedOutMovies, checkoutBook, checkinBook, checkoutMovie, checkinMovie, quit, invalidOption);
+
+        assertEquals(listBooks.getClass(), parser.parseCommand(input).getClass());
     }
 
     @Test
     public void shouldParseInvalidInputIntoInvalidOption() {
-        String input = "2";
-        Library library = mock(Library.class);
-        Console console = mock(Console.class);
-        Parser parser = new Parser(library, console);
+        String input = "InvalidOption";
+        View listBooks = mock(ListBooks.class);
+        View listCheckedOutBooks = mock(ListCheckOutBooks.class);
+        View listMovies = mock(ListMovies.class);
+        View listCheckedOutMovies = mock(ListCheckOutMovies.class);
+        View checkoutBook = mock(CheckoutBook.class);
+        View checkinBook = mock(CheckinBook.class);
+        View checkoutMovie = mock(CheckoutMovie.class);
+        View checkinMovie = mock(CheckinMovie.class);
+        View quit = mock(Quit.class);
+        View invalidOption = mock(InvalidOption.class);
 
-        assertEquals(InvalidOption.class, parser.parseCommand(input).getClass());
+        Parser parser = new Parser(listBooks, listCheckedOutBooks, listMovies, listCheckedOutMovies, checkoutBook, checkinBook, checkoutMovie, checkinMovie, quit, invalidOption);
+
+        assertEquals(invalidOption.getClass(), parser.parseCommand(input).getClass());
     }
 
     @Test
-    public void shouldParseQuitInputIntoInvalidOption() {
+    public void shouldParseQuitInputIntoQuit() {
         String input = "Quit";
-        Library library = mock(Library.class);
-        Console console = mock(Console.class);
-        Parser parser = new Parser(library, console);
+        View listBooks = mock(ListBooks.class);
+        View listCheckedOutBooks = mock(ListCheckOutBooks.class);
+        View listMovies = mock(ListMovies.class);
+        View listCheckedOutMovies = mock(ListCheckOutMovies.class);
+        View checkoutBook = mock(CheckoutBook.class);
+        View checkinBook = mock(CheckinBook.class);
+        View checkoutMovie = mock(CheckoutMovie.class);
+        View checkinMovie = mock(CheckinMovie.class);
+        View quit = mock(Quit.class);
+        View invalidOption = mock(InvalidOption.class);
 
-        assertEquals(Quit.class, parser.parseCommand(input).getClass());
+        Parser parser = new Parser(listBooks, listCheckedOutBooks, listMovies, listCheckedOutMovies, checkoutBook, checkinBook, checkoutMovie, checkinMovie, quit, invalidOption);
+
+        assertEquals(quit.getClass(), parser.parseCommand(input).getClass());
     }
 
     @Test
     public void shouldParseCheckoutBookInputIntoCheckoutBook() {
-        String input = "CheckoutBook-Head First With Java";
-        Library library = mock(Library.class);
-        Console console = mock(Console.class);
-        Parser parser = new Parser(library, console);
+        String input = "CheckoutBook";
+        View listBooks = mock(ListBooks.class);
+        View listCheckedOutBooks = mock(ListCheckOutBooks.class);
+        View listMovies = mock(ListMovies.class);
+        View listCheckedOutMovies = mock(ListCheckOutMovies.class);
+        View checkoutBook = mock(CheckoutBook.class);
+        View checkinBook = mock(CheckinBook.class);
+        View checkoutMovie = mock(CheckoutMovie.class);
+        View checkinMovie = mock(CheckinMovie.class);
+        View quit = mock(Quit.class);
+        View invalidOption = mock(InvalidOption.class);
 
-        assertEquals(CheckoutBook.class, parser.parseCommand(input).getClass());
+        Parser parser = new Parser(listBooks, listCheckedOutBooks, listMovies, listCheckedOutMovies, checkoutBook, checkinBook, checkoutMovie, checkinMovie, quit, invalidOption);
+
+        assertEquals(checkoutBook.getClass(), parser.parseCommand(input).getClass());
     }
 
     @Test
     public void shouldParseCheckinBookInputIntoCheckinBook() {
-        String input = "CheckinBook-Head First With Java";
-        Library library = mock(Library.class);
-        Console console = mock(Console.class);
-        Parser parser = new Parser(library, console);
+        String input = "CheckinBook";
+        View listBooks = mock(ListBooks.class);
+        View listCheckedOutBooks = mock(ListCheckOutBooks.class);
+        View listMovies = mock(ListMovies.class);
+        View listCheckedOutMovies = mock(ListCheckOutMovies.class);
+        View checkoutBook = mock(CheckoutBook.class);
+        View checkinBook = mock(CheckinBook.class);
+        View checkoutMovie = mock(CheckoutMovie.class);
+        View checkinMovie = mock(CheckinMovie.class);
+        View quit = mock(Quit.class);
+        View invalidOption = mock(InvalidOption.class);
 
-        assertEquals(CheckinBook.class, parser.parseCommand(input).getClass());
+        Parser parser = new Parser(listBooks, listCheckedOutBooks, listMovies, listCheckedOutMovies, checkoutBook, checkinBook, checkoutMovie, checkinMovie, quit, invalidOption);
+
+        assertEquals(checkinBook.getClass(), parser.parseCommand(input).getClass());
     }
 
     @Test
-    public void shouldParseCheckinMovieInputIntoCheckinMovie() {
-        String input = "CheckoutMovie-ABCD2";
-        Library library = mock(Library.class);
-        Console console = mock(Console.class);
-        Parser parser = new Parser(library, console);
+    public void shouldParseCheckoutMovieInputIntoCheckoutMovie() {
+        String input = "CheckoutMovie";
+        View listBooks = mock(ListBooks.class);
+        View listCheckedOutBooks = mock(ListCheckOutBooks.class);
+        View listMovies = mock(ListMovies.class);
+        View listCheckedOutMovies = mock(ListCheckOutMovies.class);
+        View checkoutBook = mock(CheckoutBook.class);
+        View checkinBook = mock(CheckinBook.class);
+        View checkoutMovie = mock(CheckoutMovie.class);
+        View checkinMovie = mock(CheckinMovie.class);
+        View quit = mock(Quit.class);
+        View invalidOption = mock(InvalidOption.class);
 
-        assertEquals(CheckoutMovie.class, parser.parseCommand(input).getClass());
+        Parser parser = new Parser(listBooks, listCheckedOutBooks, listMovies, listCheckedOutMovies, checkoutBook, checkinBook, checkoutMovie, checkinMovie, quit, invalidOption);
+
+        assertEquals(checkoutMovie.getClass(), parser.parseCommand(input).getClass());
     }
 
     @Test
     public void shouldParseListMoviesInputListMovies() {
         String input = "ListMovies";
-        Library library = mock(Library.class);
-        Console console = mock(Console.class);
-        Parser parser = new Parser(library, console);
+        View listBooks = mock(ListBooks.class);
+        View listCheckedOutBooks = mock(ListCheckOutBooks.class);
+        View listMovies = mock(ListMovies.class);
+        View listCheckedOutMovies = mock(ListCheckOutMovies.class);
+        View checkoutBook = mock(CheckoutBook.class);
+        View checkinBook = mock(CheckinBook.class);
+        View checkoutMovie = mock(CheckoutMovie.class);
+        View checkinMovie = mock(CheckinMovie.class);
+        View quit = mock(Quit.class);
+        View invalidOption = mock(InvalidOption.class);
 
-        assertEquals(ListMovies.class, parser.parseCommand(input).getClass());
+        Parser parser = new Parser(listBooks, listCheckedOutBooks, listMovies, listCheckedOutMovies, checkoutBook, checkinBook, checkoutMovie, checkinMovie, quit, invalidOption);
+
+        assertEquals(listMovies.getClass(), parser.parseCommand(input).getClass());
     }
 
     @Test
     public void shouldParseCheckinMoviesInputCheckinMovies() {
-        String input = "CheckinMovie-ABCD2";
-        Library library = mock(Library.class);
-        Console console = mock(Console.class);
-        Parser parser = new Parser(library, console);
+        String input = "CheckinMovie";
+        View listBooks = mock(ListBooks.class);
+        View listCheckedOutBooks = mock(ListCheckOutBooks.class);
+        View listMovies = mock(ListMovies.class);
+        View listCheckedOutMovies = mock(ListCheckOutMovies.class);
+        View checkoutBook = mock(CheckoutBook.class);
+        View checkinBook = mock(CheckinBook.class);
+        View checkoutMovie = mock(CheckoutMovie.class);
+        View checkinMovie = mock(CheckinMovie.class);
+        View quit = mock(Quit.class);
+        View invalidOption = mock(InvalidOption.class);
 
-        assertEquals(CheckinMovie.class, parser.parseCommand(input).getClass());
+        Parser parser = new Parser(listBooks, listCheckedOutBooks, listMovies, listCheckedOutMovies, checkoutBook, checkinBook, checkoutMovie, checkinMovie, quit, invalidOption);
+
+        assertEquals(checkinMovie.getClass(), parser.parseCommand(input).getClass());
     }
 
     @Test
     public void shouldParseListCheckedOutBookInputIntoCheckedOutBook() {
         String input = "ListCheckedOutBooks";
-        Library library = mock(Library.class);
-        Console console = mock(Console.class);
-        Parser parser = new Parser(library, console);
+        View listBooks = mock(ListBooks.class);
+        View listCheckedOutBooks = mock(ListCheckOutBooks.class);
+        View listMovies = mock(ListMovies.class);
+        View listCheckedOutMovies = mock(ListCheckOutMovies.class);
+        View checkoutBook = mock(CheckoutBook.class);
+        View checkinBook = mock(CheckinBook.class);
+        View checkoutMovie = mock(CheckoutMovie.class);
+        View checkinMovie = mock(CheckinMovie.class);
+        View quit = mock(Quit.class);
+        View invalidOption = mock(InvalidOption.class);
 
-        assertEquals(ListCheckOutBooks.class, parser.parseCommand(input).getClass());
+        Parser parser = new Parser(listBooks, listCheckedOutBooks, listMovies, listCheckedOutMovies, checkoutBook, checkinBook, checkoutMovie, checkinMovie, quit, invalidOption);
+        assertEquals(listCheckedOutBooks.getClass(), parser.parseCommand(input).getClass());
     }
 
     @Test
     public void shouldParseListCheckedOutMovieInputIntoCheckedOutMovie() {
         String input = "ListCheckedOutMovies";
-        Library library = mock(Library.class);
-        Console console = mock(Console.class);
-        Parser parser = new Parser(library, console);
+        View listBooks = mock(ListBooks.class);
+        View listCheckedOutBooks = mock(ListCheckOutBooks.class);
+        View listMovies = mock(ListMovies.class);
+        View listCheckedOutMovies = mock(ListCheckOutMovies.class);
+        View checkoutBook = mock(CheckoutBook.class);
+        View checkinBook = mock(CheckinBook.class);
+        View checkoutMovie = mock(CheckoutMovie.class);
+        View checkinMovie = mock(CheckinMovie.class);
+        View quit = mock(Quit.class);
+        View invalidOption = mock(InvalidOption.class);
 
-        assertEquals(ListCheckOutMovies.class, parser.parseCommand(input).getClass());
+        Parser parser = new Parser(listBooks, listCheckedOutBooks, listMovies, listCheckedOutMovies, checkoutBook, checkinBook, checkoutMovie, checkinMovie, quit, invalidOption);
+        assertEquals(listCheckedOutMovies.getClass(), parser.parseCommand(input).getClass());
     }
 }
