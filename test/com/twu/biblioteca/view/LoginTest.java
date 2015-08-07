@@ -24,9 +24,9 @@ public class LoginTest {
         when(authenticator.authenticate("000-2015", "000-2015")).thenReturn(user);
         login.performAction();
 
-        verify(console).print("Enter your Library Number");
-        verify(console).print("Enter your password");
-        verify(console).print("Login successful");
+        verify(console).print("Enter your Library Number\n");
+        verify(console).print("Enter your password\n");
+        verify(console).print("Login successful\n");
         verify(menuview).performAction();
     }
 }

@@ -16,7 +16,7 @@ public class Parser {
     private View invalidOption;
     private View login;
 
-    public Parser(View listBooks, View listCheckedOutBooks, View listMovies, View listCheckedOutMovies, View checkoutBook, View checkinBook, View checkoutMovie, View checkinMovie, View quit, View loginView, View invalidOption) {
+    public Parser(View listBooks, View listCheckedOutBooks, View listMovies, View listCheckedOutMovies, View checkoutBook, View checkinBook, View checkoutMovie, View checkinMovie, View quit, View login, View invalidOption) {
         this.listBooks = listBooks;
         this.listCheckedOutBooks = listCheckedOutBooks;
         this.listMovies = listMovies;

@@ -40,6 +40,7 @@ public class Main {
         View login = new Login(console, authenticator, menuView, loginMenuView);
         Parser parser = new Parser(listBooks, listCheckedOutBooks, listMovies, listCheckedOutMovies, checkoutBook, checkinBook, checkoutMovie, checkinMovie, quit, login, invalidOption);
         menuView.setParser(parser);
+        loginMenuView.setParser(parser);
         WelcomeView welcomeView = new WelcomeView(console, loginMenuView);
         BibliotecaApp bibliotecaApp = new BibliotecaApp(welcomeView);
         bibliotecaApp.run();

@@ -207,4 +207,23 @@ public class ParserTest {
         Parser parser = new Parser(listBooks, listCheckedOutBooks, listMovies, listCheckedOutMovies, checkoutBook, checkinBook, checkoutMovie, checkinMovie, quit, login, invalidOption);
         assertEquals(listCheckedOutMovies.getClass(), parser.parseCommand(input).getClass());
     }
+
+    @Test
+    public void shouldParseLoginInputIntoLogin() {
+        String input = "Login";
+        View listBooks = mock(ListBooks.class);
+        View listCheckedOutBooks = mock(ListCheckOutBooks.class);
+        View listMovies = mock(ListMovies.class);
+        View listCheckedOutMovies = mock(ListCheckOutMovies.class);
+        View checkoutBook = mock(CheckoutBook.class);
+        View checkinBook = mock(CheckinBook.class);
+        View checkoutMovie = mock(CheckoutMovie.class);
+        View checkinMovie = mock(CheckinMovie.class);
+        View quit = mock(Quit.class);
+        View invalidOption = mock(InvalidOption.class);
+        View login = mock(Login.class);
+
+        Parser parser = new Parser(listBooks, listCheckedOutBooks, listMovies, listCheckedOutMovies, checkoutBook, checkinBook, checkoutMovie, checkinMovie, quit, login, invalidOption);
+        assertEquals(login.getClass(), parser.parseCommand(input).getClass());
+    }
 }

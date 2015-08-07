@@ -20,17 +20,17 @@ public class Login implements View {
 
     @Override
     public void performAction() {
-        console.print("Enter your Library Number");
+        console.print("Enter your Library Number\n");
         String libraryNumber = console.input();
-        console.print("Enter your password");
+        console.print("Enter your password\n");
         String password = console.input();
         User user = authenticator.authenticate(libraryNumber, password);
         if(user == null) {
-            console.print("Login unsuccessful");
+            console.print("Login unsuccessful\n");
             loginUnSuccessfulView.performAction();
         }
         else {
-            console.print("Login successful");
+            console.print("Login successful\n");
             loginSuccessfulView.performAction();
         }
     }
