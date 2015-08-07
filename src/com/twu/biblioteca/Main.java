@@ -32,7 +32,8 @@ public class Main {
         View checkinMovie = new CheckinMovie(library, console, menuView);
         View quit = new Quit();
         View invalidOption = new InvalidOption(console, menuView);
-        Parser parser = new Parser(listBooks, listCheckedOutBooks, listMovies, listCheckedOutMovies, checkoutBook, checkinBook, checkoutMovie, checkinMovie, quit, invalidOption);
+        View login = new Login();
+        Parser parser = new Parser(listBooks, listCheckedOutBooks, listMovies, listCheckedOutMovies, checkoutBook, checkinBook, checkoutMovie, checkinMovie, quit, login, invalidOption);
         menuView.setParser(parser);
         WelcomeView welcomeView = new WelcomeView(console, menuView);
         BibliotecaApp bibliotecaApp = new BibliotecaApp(welcomeView);

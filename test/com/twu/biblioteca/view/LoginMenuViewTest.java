@@ -7,14 +7,14 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
-public class LoginViewTest {
+public class LoginMenuViewTest {
 
     @Test
     public void shouldDisplayLoginMenu() {
         Console console = mock(Console.class);
-        LoginView loginView = new LoginView(console);
+        LoginMenuView loginMenuView = new LoginMenuView(console);
 
-        loginView.performAction();
+        loginMenuView.performAction();
 
         String[] menu = {"Login", "Quit"};
         for(String menuElement : menu) {

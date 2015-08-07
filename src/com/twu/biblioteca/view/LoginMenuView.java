@@ -3,10 +3,10 @@ package com.twu.biblioteca.view;
 import com.twu.biblioteca.console.Console;
 import com.twu.biblioteca.parser.Parser;
 
-public class LoginView implements View {
+public class LoginMenuView implements View {
     private Console console;
 
-    public LoginView(Console console) {
+    public LoginMenuView(Console console) {
         this.console = console;
     }
 

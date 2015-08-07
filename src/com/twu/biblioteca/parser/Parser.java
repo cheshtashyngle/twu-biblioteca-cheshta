@@ -14,8 +14,9 @@ public class Parser {
     private View checkinMovie;
     private View quit;
     private View invalidOption;
+    private View login;
 
-    public Parser(View listBooks, View listCheckedOutBooks, View listMovies, View listCheckedOutMovies, View checkoutBook, View checkinBook, View checkoutMovie, View checkinMovie, View quit, View invalidOption) {
+    public Parser(View listBooks, View listCheckedOutBooks, View listMovies, View listCheckedOutMovies, View checkoutBook, View checkinBook, View checkoutMovie, View checkinMovie, View quit, View loginView, View invalidOption) {
         this.listBooks = listBooks;
         this.listCheckedOutBooks = listCheckedOutBooks;
         this.listMovies = listMovies;
@@ -25,6 +26,7 @@ public class Parser {
         this.checkoutMovie = checkoutMovie;
         this.checkinMovie = checkinMovie;
         this.quit = quit;
+        this.login = login;
         this.invalidOption = invalidOption;
     }
 
@@ -55,6 +57,9 @@ public class Parser {
         }
         else if(input.equals("Quit")) {
             return quit;
+        }
+        else if(input.equals("Login")) {
+            return login;
         }
         else {
             return invalidOption;
