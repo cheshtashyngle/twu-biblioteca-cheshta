@@ -2,10 +2,10 @@ package com.twu.biblioteca;
 
 import com.twu.biblioteca.controller.BibliotecaApp;
 import com.twu.biblioteca.model.*;
+import com.twu.biblioteca.model.Authenticator;
 import com.twu.biblioteca.parser.Parser;
 import com.twu.biblioteca.console.Console;
 import com.twu.biblioteca.view.*;
-
 import java.util.ArrayList;
 
 public class Main {
@@ -32,10 +32,15 @@ public class Main {
         View checkinMovie = new CheckinMovie(library, console, menuView);
         View quit = new Quit();
         View invalidOption = new InvalidOption(console, menuView);
-        View login = new Login();
+        ArrayList<User> users = new ArrayList<User>();
+        User user = new User("000-2015", "000-2015", "customer");
+        users.add(user);
+        Authenticator authenticator = new Authenticator(users);
+        LoginMenuView loginMenuView = new LoginMenuView(console);
+        View login = new Login(console, authenticator, menuView, loginMenuView);
         Parser parser = new Parser(listBooks, listCheckedOutBooks, listMovies, listCheckedOutMovies, checkoutBook, checkinBook, checkoutMovie, checkinMovie, quit, login, invalidOption);
         menuView.setParser(parser);
-        WelcomeView welcomeView = new WelcomeView(console, menuView);
+        WelcomeView welcomeView = new WelcomeView(console, loginMenuView);
         BibliotecaApp bibliotecaApp = new BibliotecaApp(welcomeView);
         bibliotecaApp.run();
     }

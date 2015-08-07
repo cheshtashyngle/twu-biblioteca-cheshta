@@ -1,7 +1,6 @@
 package com.twu.biblioteca.view;
 
 import com.twu.biblioteca.console.Console;
-import com.twu.biblioteca.parser.Parser;
 
 public class LoginMenuView implements View {
     private Console console;
