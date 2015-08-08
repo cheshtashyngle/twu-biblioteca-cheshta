@@ -11,6 +11,10 @@ public class User {
         this.role = role;
     }
 
+    public String getLibraryNumber() {
+        return libraryNumber;
+    }
+
     public boolean hasLoginCredentials(String libraryNumber, String password) {
         if(this.libraryNumber.equals(libraryNumber) && this.password.equals(password)) {
             return true;

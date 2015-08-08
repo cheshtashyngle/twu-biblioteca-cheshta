@@ -29,8 +29,8 @@
             <test name = "com.twu.biblioteca.view.CheckinMovieTest" />
             <test name = "com.twu.biblioteca.view.InvalidOptionTest" />
             <test name = "com.twu.biblioteca.view.ListBooksTest" />
-            <test name = "com.twu.biblioteca.view.ListCheckedOutBooksTest" />
-            <test name = "com.twu.biblioteca.view.ListCheckedOutMoviesTest" />
+            <test name = "com.twu.biblioteca.view.ListCheckOutBooksTest" />
+            <test name = "com.twu.biblioteca.view.ListCheckOutMoviesTest" />
             <test name = "com.twu.biblioteca.view.ListMoviesTest" />
             <test name = "com.twu.biblioteca.parser.ParserTest" />
             <test name = "com.twu.biblioteca.console.ConsoleTest" />

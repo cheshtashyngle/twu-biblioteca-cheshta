@@ -7,14 +7,15 @@ import org.junit.Test;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
-public class ListCheckedOutMoviesTest {
+public class ListCheckOutMoviesTest {
 
     @Test
     public void shouldTellLibraryToTellWhatCheckedOutBooksItHasAndAskViewToPrint() {
         Library library = mock(Library.class);
         Console console = mock(Console.class);
         View menuView = mock(MenuView.class);
-        ListCheckOutMovies listCheckOutMovies = new ListCheckOutMovies(library, console, menuView);
+        Login login = mock(Login.class);
+        ListCheckOutMovies listCheckOutMovies = new ListCheckOutMovies(library, console, menuView, login);
 
         listCheckOutMovies.performAction();
 

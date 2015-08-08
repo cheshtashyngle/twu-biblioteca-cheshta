@@ -8,11 +8,13 @@ public class ListCheckOutBooks implements View {
     private Library library;
     private Console console;
     private View nextView;
+    private View login;
 
-    public ListCheckOutBooks(Library library, Console console, View nexView) {
+    public ListCheckOutBooks(Library library, Console console, View nexView, View login) {
         this.library = library;
         this.console = console;
         this.nextView = nexView;
+        this.login = login;
     }
 
     @Override

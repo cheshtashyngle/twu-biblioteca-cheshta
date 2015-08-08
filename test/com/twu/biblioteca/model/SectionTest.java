@@ -4,6 +4,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
 
 
 public class SectionTest {
@@ -28,8 +29,9 @@ public class SectionTest {
         Section section = new Section(books1);
         ArrayList<Book> books2 = new ArrayList<Book>();
         books2.add(book1);
+        User user = mock(User.class);
 
-        section.checkout(book2.name());
+        section.checkout(book2.name(), user);
 
         assertEquals("Head First With Java|Serran|1990|\n" , section.items());
     }
@@ -45,9 +47,10 @@ public class SectionTest {
         ArrayList<Book> books2 = new ArrayList<Book>();
         books2.add(book1);
         books2.add(book2);
+        User user = new User("000-2015", "000-2015", "customer");
 
-        section.checkout(book2.name());
-        section.checkin(book2.name());
+        section.checkout(book2.name(), user);
+        section.checkin(book2.name(), user);
 
         assertEquals("Head First With Java|Serran|1990|\nTwo States|Chetan Bhagat|2000|\n", section.items());
     }

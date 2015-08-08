@@ -1,5 +1,6 @@
 package com.twu.biblioteca.model;
 
+
 public class Library {
     private Section book;
     private Section movie;
@@ -17,20 +18,20 @@ public class Library {
         return movie.items();
     }
 
-    public boolean checkoutBook(String bookName) {
-        return book.checkout(bookName);
+    public boolean checkoutBook(String bookName, User user) {
+        return book.checkout(bookName, user);
     }
 
-    public boolean checkinBook(String bookName) {
-        return book.checkin(bookName);
+    public boolean checkinBook(String bookName, User user) {
+        return book.checkin(bookName, user);
     }
 
-    public boolean checkoutMovie(String movieName) {
-        return movie.checkout(movieName);
+    public boolean checkoutMovie(String movieName, User user) {
+        return movie.checkout(movieName, user);
     }
 
-    public boolean checkinMovie(String movieName)  {
-        return movie.checkin(movieName);
+    public boolean checkinMovie(String movieName, User user)  {
+        return movie.checkin(movieName, user);
     }
 
     public String checkedOutBooks() {

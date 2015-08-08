@@ -2,14 +2,16 @@ package com.twu.biblioteca.model;
 
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Section {
     private ArrayList<Item> items;
-    private ArrayList<Item> issuedItems;
+    private HashMap<Item,String> issuedItems;
 
     public Section(ArrayList<Item> items) {
         this.items = items;
-        issuedItems = new ArrayList<Item>();
+        issuedItems = new HashMap<Item, String>();
     }
 
     public String items() {
@@ -20,22 +22,22 @@ public class Section {
         return itemsDetails;
     }
 
-    public boolean checkout(String name) {
+    public boolean checkout(String name, User user) {
         for(Item item : items) {
             if(item.hasTitle(name)) {
                 items.remove(item);
-                issuedItems.add(item);
+                issuedItems.put(item, user.getLibraryNumber());
                 return true;
             }
         }
         return false;
     }
 
-    public boolean checkin(String bookName) {
-        for(Item item : issuedItems) {
-            if(item.hasTitle(bookName)) {
-                items.add(item);
-                issuedItems.remove(item);
+    public boolean checkin(String name, User user) {
+        for(Map.Entry<Item, String > issuedItem: issuedItems.entrySet()) {
+            if(issuedItem.getKey().hasTitle(name) && issuedItem.getValue().equals(user.getLibraryNumber())) {
+                items.add(issuedItem.getKey());
+                issuedItems.remove(issuedItem);
                 return true;
             }
         }
@@ -44,8 +46,8 @@ public class Section {
 
     public String checkedOutItems() {
         String checkedOutItemsDetails = "";
-        for(Item checkedOutItem : issuedItems) {
-            checkedOutItemsDetails = checkedOutItemsDetails + checkedOutItem.toString() + '\n';
+        for(Map.Entry<Item, String> issuedItem : issuedItems.entrySet()) {
+            checkedOutItemsDetails = checkedOutItemsDetails + issuedItem.getKey().toString() + " checked out by " + issuedItem.getValue()  +'\n';
         }
         return checkedOutItemsDetails;
     }

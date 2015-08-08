@@ -34,44 +34,48 @@ public class LibraryTest {
     public void shouldCallSectionCheckoutForBook() {
         Section book = mock(Section.class);
         Section movie = mock(Section.class);
+        User user = mock(User.class);
         Library library = new Library(book, movie);
 
-        library.checkoutBook("Head First With Java");
+        library.checkoutBook("Head First With Java", user);
 
-        verify(book).checkout("Head First With Java");
+        verify(book).checkout("Head First With Java", user);
     }
 
     @Test
     public void shouldCallSectionCheckinForBook() {
         Section book = mock(Section.class);
         Section movie = mock(Section.class);
+        User user = mock(User.class);
         Library library = new Library(book, movie);
 
-        library.checkinBook("Head First With Java");
+        library.checkinBook("Head First With Java", user);
 
-        verify(book).checkin("Head First With Java");
+        verify(book).checkin("Head First With Java", user);
     }
 
     @Test
     public void shouldCallSectionCheckoutForMovie() {
         Section book = mock(Section.class);
         Section movie = mock(Section.class);
+        User user = mock(User.class);
         Library library = new Library(book, movie);
 
-        library.checkoutMovie("ABCD2");
+        library.checkoutMovie("ABCD2", user);
 
-        verify(movie).checkout("ABCD2");
+        verify(movie).checkout("ABCD2", user);
     }
 
     @Test
     public void shouldCallSectionCheckinForMovie() {
         Section book = mock(Section.class);
         Section movie = mock(Section.class);
+        User user = mock(User.class);
         Library library = new Library(book, movie);
 
-        library.checkinMovie("ABCD2");
+        library.checkinMovie("ABCD2", user);
 
-        verify(movie).checkin("ABCD2");
+        verify(movie).checkin("ABCD2", user);
     }
 
     @Test

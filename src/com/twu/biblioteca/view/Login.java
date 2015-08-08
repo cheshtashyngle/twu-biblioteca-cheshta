@@ -10,6 +10,7 @@ public class Login implements View {
     private Authenticator authenticator;
     private View loginSuccessfulView;
     private View loginUnSuccessfulView;
+    private User currentUser;
 
     public Login(Console console, Authenticator authenticator, View loginSuccessfulView, View loginUnSuccessfulView) {
         this.console = console;
@@ -24,8 +25,8 @@ public class Login implements View {
         String libraryNumber = console.input();
         console.print("Enter your password\n");
         String password = console.input();
-        User user = authenticator.authenticate(libraryNumber, password);
-        if(user == null) {
+        currentUser = authenticator.authenticate(libraryNumber, password);
+        if(currentUser == null) {
             console.print("Login unsuccessful\n");
             loginUnSuccessfulView.performAction();
         }
@@ -33,5 +34,9 @@ public class Login implements View {
             console.print("Login successful\n");
             loginSuccessfulView.performAction();
         }
+    }
+
+    public User getCurrentUser() {
+        return currentUser;
     }
 }
