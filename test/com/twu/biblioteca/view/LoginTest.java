@@ -18,7 +18,7 @@ public class LoginTest {
         MenuView menuview = mock(MenuView.class);
         LoginMenuView loginMenuView = mock(LoginMenuView.class);
         Login login = new Login(console, authenticator, menuview, loginMenuView);
-        User user = new User("000-2015", "000-2015", false);
+        User user = new User("000-2015", "000-2015", "Student1", "student@gmail.com", "1234567890", false);
 
         when(console.input()).thenReturn("000-2015");
         when(authenticator.authenticate("000-2015", "000-2015")).thenReturn(user);

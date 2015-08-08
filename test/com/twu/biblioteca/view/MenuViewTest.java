@@ -17,7 +17,7 @@ public class MenuViewTest {
         MenuView menuView = new MenuView(console);
         Parser parser = mock(Parser.class);
         View listBooks = mock(ListBooks.class);
-        User user = new User("000-2015", "000-2015", false);
+        User user = new User("000-2015", "000-2015", "Student1", "student@gmail.com", "1234567890", false);
         ArrayList<String> menu = new ArrayList<String>();
         menu.add("ListBooks");
         menu.add("ListMovies");
@@ -25,6 +25,7 @@ public class MenuViewTest {
         menu.add("CheckinBook");
         menu.add("CheckoutMovie");
         menu.add("CheckinMovie");
+        menu.add("Profile");
         menu.add("Logout");
         menu.add("Quit");
 
@@ -36,7 +37,7 @@ public class MenuViewTest {
         for(String menuElement : menu) {
             verify(console).print(menuElement);
         }
-        verify(console,times(8)).print("\n");
+        verify(console,times(9)).print("\n");
         verify(listBooks).performAction(user);
     }
 }

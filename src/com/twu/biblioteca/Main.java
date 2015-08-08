@@ -23,9 +23,9 @@ public class Main {
         Library library = new Library(bookSection, movieSection);
         MenuView menuView = new MenuView(console);
         ArrayList<User> users = new ArrayList<User>();
-        User user1 = new User("000-2015", "000-2015", false);
-        User user2 = new User("001-2015", "001-2015", false);
-        User user3 = new User("999-2015", "999-2015", true);
+        User user1 = new User("000-2015", "000-2015", "Student1", "student@gmail.com", "1234567890", false);
+        User user2 = new User("001-2015", "001-2015", "Student1", "student@gmail.com", "1234567890", false);
+        User user3 = new User("999-2015", "999-2015", "Student1", "student@gmail.com", "1234567890", true);
         users.add(user1);
         users.add(user2);
         users.add(user3);

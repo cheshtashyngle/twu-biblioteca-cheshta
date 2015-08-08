@@ -17,7 +17,7 @@ public class CheckoutMovieTest {
         Console console = mock(Console.class);
         View menuView = mock(MenuView.class);
         CheckoutMovie checkoutMovie = new CheckoutMovie(library, console, menuView);
-        User user = new User("000-2015", "000-2015", false);
+        User user = new User("000-2015", "000-2015", "Student1", "student@gmail.com", "1234567890", false);
 
         when(console.input()).thenReturn("ABCD2");
         when(library.checkoutMovie("ABCD2", user)).thenReturn(true);

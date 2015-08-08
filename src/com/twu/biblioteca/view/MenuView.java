@@ -29,6 +29,7 @@ public class MenuView implements View {
         menu.add("CheckinBook");
         menu.add("CheckoutMovie");
         menu.add("CheckinMovie");
+        menu.add("Profile");
         menu.add("Logout");
         menu.add("Quit");
         if(user.isLibrarian()) {

@@ -16,7 +16,7 @@ public class CheckoutBookTest {
         Console console = mock(Console.class);
         View menuView = mock(MenuView.class);
         CheckoutBook checkoutBook = new CheckoutBook(library, console, menuView);
-        User user = new User("000-2015", "000-2015", false);
+        User user = new User("000-2015", "000-2015", "Student1", "student@gmail.com", "1234567890", false);
 
         when(console.input()).thenReturn("Head First With Java");
         when(library.checkoutBook("Head First With Java", user)).thenReturn(true);
