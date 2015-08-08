@@ -14,9 +14,9 @@ public class LogoutTest {
         LoginMenuView loginMenuView = mock(LoginMenuView.class);
         Logout logout = new Logout(console, loginMenuView);
 
-        logout.performAction();
+        logout.performAction(null);
 
         verify(console).print("Logout Successful\n");
-        verify(loginMenuView).performAction();
+        verify(loginMenuView).performAction(null);
     }
 }

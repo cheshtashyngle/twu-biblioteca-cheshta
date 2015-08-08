@@ -2,6 +2,7 @@ package com.twu.biblioteca.view;
 
 import com.twu.biblioteca.console.Console;
 import com.twu.biblioteca.model.Library;
+import com.twu.biblioteca.model.User;
 
 
 public class ListMovies implements View {
@@ -16,8 +17,8 @@ public class ListMovies implements View {
     }
 
     @Override
-    public void performAction() {
+    public void performAction(User user) {
         console.print(library.movies());
-        nextView.performAction();
+        nextView.performAction(user);
     }
 }

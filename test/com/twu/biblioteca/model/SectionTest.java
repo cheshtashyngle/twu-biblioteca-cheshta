@@ -47,7 +47,7 @@ public class SectionTest {
         ArrayList<Book> books2 = new ArrayList<Book>();
         books2.add(book1);
         books2.add(book2);
-        User user = new User("000-2015", "000-2015", "customer");
+        User user = new User("000-2015", "000-2015", false);
 
         section.checkout(book2.name(), user);
         section.checkin(book2.name(), user);

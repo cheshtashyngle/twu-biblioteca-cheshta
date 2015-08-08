@@ -12,7 +12,7 @@ public class AuthenticatorTest {
     @Test
     public void shouldAuthenticateUser() {
         ArrayList<User> users = new ArrayList<User>();
-        User user = new User("000-2015", "student", "customer");
+        User user = new User("000-2015", "student", false);
         users.add(user);
         Authenticator authenticator = new Authenticator(users);
 

@@ -17,9 +17,9 @@ public class ListBooksTest {
         View menuView = mock(MenuView.class);
         ListBooks listBooks = new ListBooks(library, console, menuView);
 
-        listBooks.performAction();
+        listBooks.performAction(null);
 
         verify(console).print(library.books());
-        verify(menuView).performAction();
+        verify(menuView).performAction(null);
     }
 }

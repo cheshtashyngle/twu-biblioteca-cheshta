@@ -16,17 +16,15 @@ public class CheckinMovieTest {
         Library library = mock(Library.class);
         Console console = mock(Console.class);
         View menuView = mock(MenuView.class);
-        Login login = mock(Login.class);
-        CheckinMovie checkinMovie = new CheckinMovie(library, console, menuView, login);
-        User user = new User("000-2015", "000-2015", "customer");
+        CheckinMovie checkinMovie = new CheckinMovie(library, console, menuView);
+        User user = new User("000-2015", "000-2015", false);
 
         when(console.input()).thenReturn("ABCD2");
-        when(login.getCurrentUser()).thenReturn(user);
         when(library.checkinMovie("ABCD2", user)).thenReturn(true);
-        checkinMovie.performAction();
+        checkinMovie.performAction(user);
 
         verify(console).print("Enter the movie name\n");
         verify(console).print("Thank you for returning the Movie\n");
-        verify(menuView).performAction();
+        verify(menuView).performAction(user);
     }
 }

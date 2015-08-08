@@ -18,15 +18,15 @@ public class LoginTest {
         MenuView menuview = mock(MenuView.class);
         LoginMenuView loginMenuView = mock(LoginMenuView.class);
         Login login = new Login(console, authenticator, menuview, loginMenuView);
-        User user = new User("000-2015", "000-2015", "customer");
+        User user = new User("000-2015", "000-2015", false);
 
         when(console.input()).thenReturn("000-2015");
         when(authenticator.authenticate("000-2015", "000-2015")).thenReturn(user);
-        login.performAction();
+        login.performAction(null);
 
         verify(console).print("Enter your Library Number\n");
         verify(console).print("Enter your password\n");
         verify(console).print("Login successful\n");
-        verify(menuview).performAction();
+        verify(menuview).performAction(user);
     }
 }

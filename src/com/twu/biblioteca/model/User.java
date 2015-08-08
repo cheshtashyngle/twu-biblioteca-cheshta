@@ -3,16 +3,20 @@ package com.twu.biblioteca.model;
 public class User {
     private String libraryNumber;
     private String password;
-    private String role;
+    private boolean librarian;
 
-    public User(String libraryNumber, String password, String role) {
+    public User(String libraryNumber, String password, boolean librarian) {
         this.libraryNumber = libraryNumber;
         this.password = password;
-        this.role = role;
+        this.librarian = librarian;
     }
 
     public String getLibraryNumber() {
         return libraryNumber;
+    }
+
+    public boolean isLibrarian() {
+        return librarian;
     }
 
     public boolean hasLoginCredentials(String libraryNumber, String password) {

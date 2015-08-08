@@ -1,6 +1,7 @@
 package com.twu.biblioteca.view;
 
 import com.twu.biblioteca.console.Console;
+import com.twu.biblioteca.model.User;
 import com.twu.biblioteca.parser.Parser;
 
 
@@ -18,7 +19,7 @@ public class LoginMenuView implements View {
     }
 
     @Override
-    public void performAction() {
+    public void performAction(User user) {
         String[] menu = {"Login", "Quit"};
         for(String menuElement : menu) {
             console.print(menuElement);
@@ -26,6 +27,6 @@ public class LoginMenuView implements View {
         }
         String input = console.input();
         nextView = parser.parseCommand(input);
-        nextView.performAction();
+        nextView.performAction(user);
     }
 }

@@ -14,9 +14,9 @@ public class WelcomeViewTest {
         Console console = mock(Console.class);
         WelcomeView welcomeView = new WelcomeView(console, menuView);
 
-        welcomeView.performAction();
+        welcomeView.performAction(null);
 
         verify(console).print("Welcome to Biblioteca Library Management System\n");
-        verify(menuView).performAction();
+        verify(menuView).performAction(null);
     }
 }

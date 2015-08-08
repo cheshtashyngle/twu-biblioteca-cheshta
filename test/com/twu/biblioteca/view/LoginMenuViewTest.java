@@ -18,7 +18,7 @@ public class LoginMenuViewTest {
         when(console.input()).thenReturn("Login");
         when(parser.parseCommand("Login")).thenReturn(login);
         loginMenuView.setParser(parser);
-        loginMenuView.performAction();
+        loginMenuView.performAction(null);
 
         String[] menu = {"Login", "Quit"};
         for(String menuElement : menu) {
@@ -26,6 +26,6 @@ public class LoginMenuViewTest {
         }
         verify(console, times(2)).print("\n");
         verify(parser).parseCommand("Login");
-        verify(login).performAction();
+        verify(login).performAction(null);
     }
 }

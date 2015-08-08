@@ -10,7 +10,6 @@ public class Login implements View {
     private Authenticator authenticator;
     private View loginSuccessfulView;
     private View loginUnSuccessfulView;
-    private User currentUser;
 
     public Login(Console console, Authenticator authenticator, View loginSuccessfulView, View loginUnSuccessfulView) {
         this.console = console;
@@ -20,23 +19,19 @@ public class Login implements View {
     }
 
     @Override
-    public void performAction() {
+    public void performAction(User user) {
         console.print("Enter your Library Number\n");
         String libraryNumber = console.input();
         console.print("Enter your password\n");
         String password = console.input();
-        currentUser = authenticator.authenticate(libraryNumber, password);
-        if(currentUser == null) {
+        user = authenticator.authenticate(libraryNumber, password);
+        if(user == null) {
             console.print("Login unsuccessful\n");
-            loginUnSuccessfulView.performAction();
+            loginUnSuccessfulView.performAction(user);
         }
         else {
             console.print("Login successful\n");
-            loginSuccessfulView.performAction();
+            loginSuccessfulView.performAction(user);
         }
-    }
-
-    public User getCurrentUser() {
-        return currentUser;
     }
 }

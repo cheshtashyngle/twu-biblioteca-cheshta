@@ -14,7 +14,7 @@ public class InvalidOptionTest {
         View menuView = mock(MenuView.class);
         InvalidOption invalidOption = new InvalidOption(console, menuView);
 
-        invalidOption.performAction();
+        invalidOption.performAction(null);
 
         verify(console).print("Select a valid option!\n");
     }

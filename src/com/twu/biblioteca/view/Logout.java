@@ -1,6 +1,7 @@
 package com.twu.biblioteca.view;
 
 import com.twu.biblioteca.console.Console;
+import com.twu.biblioteca.model.User;
 
 public class Logout implements View {
     private Console console;
@@ -12,8 +13,8 @@ public class Logout implements View {
     }
 
     @Override
-    public void performAction() {
+    public void performAction(User user) {
         console.print("Logout Successful\n");
-        nextView.performAction();
+        nextView.performAction(null);
     }
 }

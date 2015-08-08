@@ -15,6 +15,6 @@ public class BibliotecaAppTest {
 
         bibliotecaApp.run();
 
-        verify(welcomeView).performAction();
+        verify(welcomeView).performAction(null);
     }
 }

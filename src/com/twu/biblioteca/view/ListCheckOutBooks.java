@@ -2,24 +2,23 @@ package com.twu.biblioteca.view;
 
 import com.twu.biblioteca.console.Console;
 import com.twu.biblioteca.model.Library;
+import com.twu.biblioteca.model.User;
 
 
 public class ListCheckOutBooks implements View {
     private Library library;
     private Console console;
     private View nextView;
-    private View login;
 
-    public ListCheckOutBooks(Library library, Console console, View nexView, View login) {
+    public ListCheckOutBooks(Library library, Console console, View nexView) {
         this.library = library;
         this.console = console;
         this.nextView = nexView;
-        this.login = login;
     }
 
     @Override
-    public void performAction() {
+    public void performAction(User user) {
         console.print(library.checkedOutBooks());
-        nextView.performAction();
+        nextView.performAction(user);
     }
 }

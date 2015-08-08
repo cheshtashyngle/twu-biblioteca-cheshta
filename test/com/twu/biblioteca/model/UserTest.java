@@ -8,7 +8,7 @@ public class UserTest {
 
     @Test
     public void shouldReturnTrueIfLoginDetailsMatch() {
-        User user = new User("001-2015", "hello", "customer");
+        User user = new User("001-2015", "hello", false);
 
         assertEquals(true, user.hasLoginCredentials("001-2015", "hello"));
     }

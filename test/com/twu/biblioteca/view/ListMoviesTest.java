@@ -17,10 +17,10 @@ public class ListMoviesTest {
         View menuView = mock(MenuView.class);
         ListMovies listMovies = new ListMovies(library, console, menuView);
 
-        listMovies.performAction();
+        listMovies.performAction(null);
 
         verify(console).print(library.movies());
-        verify(menuView).performAction();
+        verify(menuView).performAction(null);
     }
 }
 

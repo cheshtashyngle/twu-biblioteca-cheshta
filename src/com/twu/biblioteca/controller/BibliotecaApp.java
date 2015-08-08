@@ -10,6 +10,6 @@ public class BibliotecaApp {
     }
 
     public void run() {
-        startView.performAction();
+        startView.performAction(null);
     }
 }

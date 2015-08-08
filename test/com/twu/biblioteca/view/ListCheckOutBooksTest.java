@@ -14,12 +14,11 @@ public class ListCheckOutBooksTest {
         Library library = mock(Library.class);
         Console console = mock(Console.class);
         View menuView = mock(MenuView.class);
-        Login login = mock(Login.class);
-        ListCheckOutBooks listCheckOutBooks = new ListCheckOutBooks(library, console, menuView, login);
+        ListCheckOutBooks listCheckOutBooks = new ListCheckOutBooks(library, console, menuView);
 
-        listCheckOutBooks.performAction();
+        listCheckOutBooks.performAction(null);
 
         verify(console).print(library.books());
-        verify(menuView).performAction();
+        verify(menuView).performAction(null);
     }
 }

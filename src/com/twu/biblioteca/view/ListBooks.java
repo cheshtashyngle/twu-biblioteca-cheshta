@@ -2,6 +2,7 @@ package com.twu.biblioteca.view;
 
 import com.twu.biblioteca.console.Console;
 import com.twu.biblioteca.model.Library;
+import com.twu.biblioteca.model.User;
 
 
 public class ListBooks implements View {
@@ -15,8 +16,8 @@ public class ListBooks implements View {
         this.nextView = nextView;
     }
 
-    public void performAction() {
+    public void performAction(User user) {
         console.print(library.books());
-        nextView.performAction();
+        nextView.performAction(user);
     }
 }

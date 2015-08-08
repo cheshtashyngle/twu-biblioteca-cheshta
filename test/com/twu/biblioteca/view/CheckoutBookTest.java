@@ -15,17 +15,15 @@ public class CheckoutBookTest {
         Library library = mock(Library.class);
         Console console = mock(Console.class);
         View menuView = mock(MenuView.class);
-        Login login = mock(Login.class);
-        CheckoutBook checkoutBook = new CheckoutBook(library, console, menuView, login);
-        User user = new User("000-2015", "000-2015", "customer");
+        CheckoutBook checkoutBook = new CheckoutBook(library, console, menuView);
+        User user = new User("000-2015", "000-2015", false);
 
         when(console.input()).thenReturn("Head First With Java");
-        when(login.getCurrentUser()).thenReturn(user);
         when(library.checkoutBook("Head First With Java", user)).thenReturn(true);
-        checkoutBook.performAction();
+        checkoutBook.performAction(user);
 
         verify(console).print("Enter the book name\n");
         verify(console).print("Thank you! Enjoy the book\n");
-        verify(menuView).performAction();
+        verify(menuView).performAction(user);
     }
 }

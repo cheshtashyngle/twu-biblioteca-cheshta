@@ -1,6 +1,7 @@
 package com.twu.biblioteca.view;
 
 import com.twu.biblioteca.console.Console;
+import com.twu.biblioteca.model.User;
 
 public class WelcomeView implements View {
     private Console console;
@@ -12,8 +13,8 @@ public class WelcomeView implements View {
     }
 
     @Override
-    public void performAction() {
+    public void performAction(User user) {
         console.print("Welcome to Biblioteca Library Management System\n");
-        nextView.performAction();
+        nextView.performAction(user);
     }
 }
