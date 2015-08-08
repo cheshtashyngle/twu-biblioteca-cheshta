@@ -17,6 +17,7 @@
 
     <target name="runjunit" depends="compile">
         <junit haltonfailure="true" printsummary="true" showoutput="yes">
+            <test name = "com.twu.biblioteca.controller.BibliotecaAppTest" />
             <test name = "com.twu.biblioteca.menu.MenuTest" />
             <test name = "com.twu.biblioteca.model.BookTest" />
             <test name = "com.twu.biblioteca.model.LibraryTest" />
@@ -39,6 +40,7 @@
             <test name = "com.twu.biblioteca.view.LoginMenuViewTest" />
             <test name = "com.twu.biblioteca.model.AuthenticatorTest" />
             <test name = "com.twu.biblioteca.view.LoginTest" />
+            <test name = "com.twu.biblioteca.view.LogoutTest" />
             <classpath>
                 <pathelement location="build"/>
                 <path refid="classpath"/>
