@@ -19,7 +19,7 @@ public class MenuView implements View {
 
     @Override
     public void performAction() {
-        String[] menu = {"ListBooks", "ListCheckedOutBooks", "ListMovies", "ListCheckedOutMovies", "CheckoutBook", "CheckinBook", "CheckoutMovie", "CheckinMovie",  "Quit"};
+        String[] menu = {"ListBooks", "ListCheckedOutBooks", "ListMovies", "ListCheckedOutMovies", "CheckoutBook", "CheckinBook", "CheckoutMovie", "CheckinMovie", "Logout", "Quit"};
         for(String menuElement : menu) {
             console.print(menuElement);
             console.print("\n");

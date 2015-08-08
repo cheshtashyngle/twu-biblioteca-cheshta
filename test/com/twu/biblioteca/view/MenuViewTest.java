@@ -20,11 +20,11 @@ public class MenuViewTest {
         when(parser.parseCommand(anyString())).thenReturn(listBooks);
         menuView.performAction();
 
-        String[] menu = {"ListBooks", "ListCheckedOutBooks", "ListMovies", "ListCheckedOutMovies", "CheckoutBook", "CheckinBook", "CheckoutMovie", "CheckinMovie",  "Quit"};
+        String[] menu = {"ListBooks", "ListCheckedOutBooks", "ListMovies", "ListCheckedOutMovies", "CheckoutBook", "CheckinBook", "CheckoutMovie", "CheckinMovie", "Logout", "Quit"};
         for (String menuElement : menu) {
            verify(console).print(menuElement);
         }
-        verify(console, times(9)).print("\n");
+        verify(console, times(10)).print("\n");
         verify(parser).parseCommand("ListBooks");
     }
 }
