@@ -40,7 +40,8 @@ public class Main {
         View checkinMovie = new CheckinMovie(library, console, menuView, login);
         View quit = new Quit();
         View invalidOption = new InvalidOption(console, menuView);
-        Parser parser = new Parser(listBooks, listCheckedOutBooks, listMovies, listCheckedOutMovies, checkoutBook, checkinBook, checkoutMovie, checkinMovie, quit, login, invalidOption);
+        View logout = new Logout();
+        Parser parser = new Parser(listBooks, listCheckedOutBooks, listMovies, listCheckedOutMovies, checkoutBook, checkinBook, checkoutMovie, checkinMovie, quit, login, invalidOption, logout);
         menuView.setParser(parser);
         loginMenuView.setParser(parser);
         WelcomeView welcomeView = new WelcomeView(console, loginMenuView);

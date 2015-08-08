@@ -15,8 +15,9 @@ public class Parser {
     private View quit;
     private View invalidOption;
     private View login;
+    private View logout;
 
-    public Parser(View listBooks, View listCheckedOutBooks, View listMovies, View listCheckedOutMovies, View checkoutBook, View checkinBook, View checkoutMovie, View checkinMovie, View quit, View login, View invalidOption) {
+    public Parser(View listBooks, View listCheckedOutBooks, View listMovies, View listCheckedOutMovies, View checkoutBook, View checkinBook, View checkoutMovie, View checkinMovie, View quit, View login, View invalidOption, View logout) {
         this.listBooks = listBooks;
         this.listCheckedOutBooks = listCheckedOutBooks;
         this.listMovies = listMovies;
@@ -28,6 +29,7 @@ public class Parser {
         this.quit = quit;
         this.login = login;
         this.invalidOption = invalidOption;
+        this.logout = logout;
     }
 
     public View parseCommand(String input) {
@@ -60,6 +62,9 @@ public class Parser {
         }
         else if(input.equals("Login")) {
             return login;
+        }
+        else if(input.equals("Logout")) {
+            return logout;
         }
         else {
             return invalidOption;

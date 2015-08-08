@@ -23,9 +23,9 @@ public class ParserTest {
         View quit = mock(Quit.class);
         View invalidOption = mock(InvalidOption.class);
         View login = mock(Login.class);
+        View logout = mock(Logout.class);
 
-        Parser parser = new Parser(listBooks, listCheckedOutBooks, listMovies, listCheckedOutMovies, checkoutBook, checkinBook, checkoutMovie, checkinMovie, quit, login, invalidOption);
-
+        Parser parser = new Parser(listBooks, listCheckedOutBooks, listMovies, listCheckedOutMovies, checkoutBook, checkinBook, checkoutMovie, checkinMovie, quit, login, invalidOption, logout);
         assertEquals(listBooks.getClass(), parser.parseCommand(input).getClass());
     }
 
@@ -43,9 +43,9 @@ public class ParserTest {
         View quit = mock(Quit.class);
         View invalidOption = mock(InvalidOption.class);
         View login = mock(Login.class);
+        View logout = mock(Logout.class);
 
-        Parser parser = new Parser(listBooks, listCheckedOutBooks, listMovies, listCheckedOutMovies, checkoutBook, checkinBook, checkoutMovie, checkinMovie, quit, login, invalidOption);
-
+        Parser parser = new Parser(listBooks, listCheckedOutBooks, listMovies, listCheckedOutMovies, checkoutBook, checkinBook, checkoutMovie, checkinMovie, quit, login, invalidOption, logout);
         assertEquals(invalidOption.getClass(), parser.parseCommand(input).getClass());
     }
 
@@ -63,9 +63,9 @@ public class ParserTest {
         View quit = mock(Quit.class);
         View invalidOption = mock(InvalidOption.class);
         View login = mock(Login.class);
+        View logout = mock(Logout.class);
 
-        Parser parser = new Parser(listBooks, listCheckedOutBooks, listMovies, listCheckedOutMovies, checkoutBook, checkinBook, checkoutMovie, checkinMovie, quit, login, invalidOption);
-
+        Parser parser = new Parser(listBooks, listCheckedOutBooks, listMovies, listCheckedOutMovies, checkoutBook, checkinBook, checkoutMovie, checkinMovie, quit, login, invalidOption, logout);
         assertEquals(quit.getClass(), parser.parseCommand(input).getClass());
     }
 
@@ -83,9 +83,9 @@ public class ParserTest {
         View quit = mock(Quit.class);
         View invalidOption = mock(InvalidOption.class);
         View login = mock(Login.class);
+        View logout = mock(Logout.class);
 
-        Parser parser = new Parser(listBooks, listCheckedOutBooks, listMovies, listCheckedOutMovies, checkoutBook, checkinBook, checkoutMovie, checkinMovie, quit, login, invalidOption);
-
+        Parser parser = new Parser(listBooks, listCheckedOutBooks, listMovies, listCheckedOutMovies, checkoutBook, checkinBook, checkoutMovie, checkinMovie, quit, login, invalidOption, logout);
         assertEquals(checkoutBook.getClass(), parser.parseCommand(input).getClass());
     }
 
@@ -103,10 +103,10 @@ public class ParserTest {
         View quit = mock(Quit.class);
         View invalidOption = mock(InvalidOption.class);
         View login = mock(Login.class);
+        View logout = mock(Logout.class);
 
 
-        Parser parser = new Parser(listBooks, listCheckedOutBooks, listMovies, listCheckedOutMovies, checkoutBook, checkinBook, checkoutMovie, checkinMovie, quit, login, invalidOption);
-
+        Parser parser = new Parser(listBooks, listCheckedOutBooks, listMovies, listCheckedOutMovies, checkoutBook, checkinBook, checkoutMovie, checkinMovie, quit, login, invalidOption, logout);
         assertEquals(checkinBook.getClass(), parser.parseCommand(input).getClass());
     }
 
@@ -124,9 +124,9 @@ public class ParserTest {
         View quit = mock(Quit.class);
         View invalidOption = mock(InvalidOption.class);
         View login = mock(Login.class);
+        View logout = mock(Logout.class);
 
-        Parser parser = new Parser(listBooks, listCheckedOutBooks, listMovies, listCheckedOutMovies, checkoutBook, checkinBook, checkoutMovie, checkinMovie, quit, login, invalidOption);
-
+        Parser parser = new Parser(listBooks, listCheckedOutBooks, listMovies, listCheckedOutMovies, checkoutBook, checkinBook, checkoutMovie, checkinMovie, quit, login, invalidOption, logout);
         assertEquals(checkoutMovie.getClass(), parser.parseCommand(input).getClass());
     }
 
@@ -144,9 +144,9 @@ public class ParserTest {
         View quit = mock(Quit.class);
         View invalidOption = mock(InvalidOption.class);
         View login = mock(Login.class);
+        View logout = mock(Logout.class);
 
-        Parser parser = new Parser(listBooks, listCheckedOutBooks, listMovies, listCheckedOutMovies, checkoutBook, checkinBook, checkoutMovie, checkinMovie, quit, login, invalidOption);
-
+        Parser parser = new Parser(listBooks, listCheckedOutBooks, listMovies, listCheckedOutMovies, checkoutBook, checkinBook, checkoutMovie, checkinMovie, quit, login, invalidOption, logout);
         assertEquals(listMovies.getClass(), parser.parseCommand(input).getClass());
     }
 
@@ -164,9 +164,9 @@ public class ParserTest {
         View quit = mock(Quit.class);
         View invalidOption = mock(InvalidOption.class);
         View login = mock(Login.class);
+        View logout = mock(Logout.class);
 
-        Parser parser = new Parser(listBooks, listCheckedOutBooks, listMovies, listCheckedOutMovies, checkoutBook, checkinBook, checkoutMovie, checkinMovie, quit, login, invalidOption);
-
+        Parser parser = new Parser(listBooks, listCheckedOutBooks, listMovies, listCheckedOutMovies, checkoutBook, checkinBook, checkoutMovie, checkinMovie, quit, login, invalidOption, logout);
         assertEquals(checkinMovie.getClass(), parser.parseCommand(input).getClass());
     }
 
@@ -184,9 +184,9 @@ public class ParserTest {
         View quit = mock(Quit.class);
         View invalidOption = mock(InvalidOption.class);
         View login = mock(Login.class);
+        View logout = mock(Logout.class);
 
-        Parser parser = new Parser(listBooks, listCheckedOutBooks, listMovies, listCheckedOutMovies, checkoutBook, checkinBook, checkoutMovie, checkinMovie, quit, login, invalidOption);
-        assertEquals(listCheckedOutBooks.getClass(), parser.parseCommand(input).getClass());
+        Parser parser = new Parser(listBooks, listCheckedOutBooks, listMovies, listCheckedOutMovies, checkoutBook, checkinBook, checkoutMovie, checkinMovie, quit, login, invalidOption, logout);        assertEquals(listCheckedOutBooks.getClass(), parser.parseCommand(input).getClass());
     }
 
     @Test
@@ -203,9 +203,9 @@ public class ParserTest {
         View quit = mock(Quit.class);
         View invalidOption = mock(InvalidOption.class);
         View login = mock(Login.class);
+        View logout = mock(Logout.class);
 
-        Parser parser = new Parser(listBooks, listCheckedOutBooks, listMovies, listCheckedOutMovies, checkoutBook, checkinBook, checkoutMovie, checkinMovie, quit, login, invalidOption);
-        assertEquals(listCheckedOutMovies.getClass(), parser.parseCommand(input).getClass());
+        Parser parser = new Parser(listBooks, listCheckedOutBooks, listMovies, listCheckedOutMovies, checkoutBook, checkinBook, checkoutMovie, checkinMovie, quit, login, invalidOption, logout);        assertEquals(listCheckedOutMovies.getClass(), parser.parseCommand(input).getClass());
     }
 
     @Test
@@ -222,8 +222,30 @@ public class ParserTest {
         View quit = mock(Quit.class);
         View invalidOption = mock(InvalidOption.class);
         View login = mock(Login.class);
+        View logout = mock(Logout.class);
 
-        Parser parser = new Parser(listBooks, listCheckedOutBooks, listMovies, listCheckedOutMovies, checkoutBook, checkinBook, checkoutMovie, checkinMovie, quit, login, invalidOption);
+        Parser parser = new Parser(listBooks, listCheckedOutBooks, listMovies, listCheckedOutMovies, checkoutBook, checkinBook, checkoutMovie, checkinMovie, quit, login, invalidOption, logout);
         assertEquals(login.getClass(), parser.parseCommand(input).getClass());
+    }
+
+    @Test
+    public void shouldParseLogoutInputIntoLogout() {
+        String input = "Logout";
+        View listBooks = mock(ListBooks.class);
+        View listCheckedOutBooks = mock(ListCheckOutBooks.class);
+        View listMovies = mock(ListMovies.class);
+        View listCheckedOutMovies = mock(ListCheckOutMovies.class);
+        View checkoutBook = mock(CheckoutBook.class);
+        View checkinBook = mock(CheckinBook.class);
+        View checkoutMovie = mock(CheckoutMovie.class);
+        View checkinMovie = mock(CheckinMovie.class);
+        View quit = mock(Quit.class);
+        View invalidOption = mock(InvalidOption.class);
+        View login = mock(Login.class);
+        View logout = mock(Logout.class);
+
+        Parser parser = new Parser(listBooks, listCheckedOutBooks, listMovies, listCheckedOutMovies, checkoutBook, checkinBook, checkoutMovie, checkinMovie, quit, login, invalidOption, logout);
+
+        assertEquals(logout.getClass(), parser.parseCommand(input).getClass());
     }
 }
