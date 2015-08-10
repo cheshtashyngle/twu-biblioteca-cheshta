@@ -40,6 +40,7 @@
             <test name = "com.twu.biblioteca.model.AuthenticatorTest" />
             <test name = "com.twu.biblioteca.view.LoginTest" />
             <test name = "com.twu.biblioteca.view.LogoutTest" />
+            <test name = "com.twu.biblioteca.view.ProfileTest" />
             <classpath>
                 <pathelement location="build"/>
                 <path refid="classpath"/>
