@@ -13,8 +13,10 @@ public class Main {
     public static void main(String[] args) {
         Console console = new Console();
         ArrayList<Item> books = new ArrayList<Item>();
-        Book book = new Book("Head First With Java", "Serran", "1990");
-        books.add(book);
+        Book book1 = new Book("Head First With Java", "Serran", "1990");
+        Book book2 = new Book("Complete Reference", "Java Author", "2001");
+        books.add(book1);
+        books.add(book2);
         Section bookSection = new Section(books);
         ArrayList<Item> movies = new ArrayList<Item>();
         Movie movie = new Movie("ABCD2", "2015", "PrabhuDeva", 8);

@@ -12,9 +12,6 @@ public class Book extends Item {
 
     @Override
     public String toString() {
-        return  name + '|' +
-               author + '|' +
-               yearOfPublishing + '|'
-                ;
+        return String.format("%-25s %-25s %-6s", name, author, yearOfPublishing);
     }
 }
