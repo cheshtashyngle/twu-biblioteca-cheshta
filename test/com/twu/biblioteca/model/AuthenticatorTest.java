@@ -16,6 +16,6 @@ public class AuthenticatorTest {
         users.add(user);
         Authenticator authenticator = new Authenticator(users);
 
-        assertEquals(User.class, authenticator.authenticate("000-2015", "student").getClass());
+        assertEquals(User.class, authenticator.authenticate("000-2015", "000-2015").getClass());
     }
 }
