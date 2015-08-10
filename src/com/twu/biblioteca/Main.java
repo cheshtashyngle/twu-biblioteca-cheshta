@@ -1,11 +1,11 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.console.Console;
 import com.twu.biblioteca.controller.BibliotecaApp;
 import com.twu.biblioteca.model.*;
-import com.twu.biblioteca.model.Authenticator;
 import com.twu.biblioteca.parser.Parser;
-import com.twu.biblioteca.console.Console;
 import com.twu.biblioteca.view.*;
+
 import java.util.ArrayList;
 
 public class Main {

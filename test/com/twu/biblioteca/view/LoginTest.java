@@ -5,9 +5,7 @@ import com.twu.biblioteca.model.Authenticator;
 import com.twu.biblioteca.model.User;
 import org.junit.Test;
 
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 public class LoginTest {
 

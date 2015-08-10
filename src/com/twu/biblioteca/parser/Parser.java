@@ -1,6 +1,6 @@
 package com.twu.biblioteca.parser;
 
-import com.twu.biblioteca.view.*;
+import com.twu.biblioteca.view.View;
 
 public class Parser {
 
